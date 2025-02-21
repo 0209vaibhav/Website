@@ -29,23 +29,86 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Add hover pop-up behavior
 document.querySelectorAll('.hover-popup').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        const popup = document.createElement('span');
+    let popup = null;
+    let timeoutId = null;
+    
+    function createPopup() {
+        if (popup) return; // Don't create if already exists
+        
+        popup = document.createElement('div');
         popup.className = 'popup-box';
-        popup.innerText = this.getAttribute('data-hover');
+        
+        const textSpan = document.createElement('span');
+        textSpan.innerText = item.getAttribute('data-hover');
+        
+        const copyButton = document.createElement('button');
+        copyButton.className = 'copy-btn';
+        copyButton.innerHTML = '📋';
+        copyButton.onclick = (e) => {
+            e.stopPropagation();
+            copyText(item.getAttribute('data-copy'));
+        };
+        
+        popup.appendChild(textSpan);
+        popup.appendChild(copyButton);
         document.body.appendChild(popup);
         
-        const rect = this.getBoundingClientRect();
+        const rect = item.getBoundingClientRect();
         popup.style.left = `${rect.left + window.scrollX + rect.width / 2}px`;
         popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
         popup.style.transform = 'translateX(-50%)';
+    }
+    
+    function removePopup() {
+        if (popup) {
+            popup.remove();
+            popup = null;
+        }
+    }
+    
+    function clearRemovalTimeout() {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+            timeoutId = null;
+        }
+    }
+    
+    item.addEventListener('mouseenter', () => {
+        clearRemovalTimeout();
+        createPopup();
     });
     
-    item.addEventListener('mouseleave', function() {
-        document.querySelectorAll('.popup-box').forEach(popup => popup.remove());
+    item.addEventListener('mouseleave', () => {
+        clearRemovalTimeout();
+        timeoutId = setTimeout(() => {
+            const isMouseOverPopup = popup && popup.matches(':hover');
+            if (!isMouseOverPopup) {
+                removePopup();
+            }
+        }, 100);
     });
     
-    // Add click functionality to open respective links
+    // Add event listeners to the document to handle popup hover
+    document.addEventListener('mouseover', (e) => {
+        if (popup && (e.target === popup || popup.contains(e.target))) {
+            clearRemovalTimeout();
+        }
+    });
+    
+    document.addEventListener('mouseout', (e) => {
+        if (popup && (e.target === popup || popup.contains(e.target))) {
+            clearRemovalTimeout();
+            timeoutId = setTimeout(() => {
+                const isMouseOverTrigger = item.matches(':hover');
+                const isMouseOverPopup = popup.matches(':hover');
+                if (!isMouseOverTrigger && !isMouseOverPopup) {
+                    removePopup();
+                }
+            }, 100);
+        }
+    });
+
+    // Keep the rest of your click handler for opening links...
     item.addEventListener('click', function() {
         const dataHover = this.getAttribute('data-hover');
         let url = '';
@@ -65,3 +128,19 @@ document.querySelectorAll('.hover-popup').forEach(item => {
         }
     });
 });
+
+function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Show a brief "Copied!" message
+        const notification = document.createElement('div');
+        notification.className = 'copy-notification';
+        notification.textContent = 'Copied!';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.remove();
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
+}
