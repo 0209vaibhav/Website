@@ -24,7 +24,7 @@ function showTab(tabId) {
 
 // Ensure About tab is active on page load
 document.addEventListener("DOMContentLoaded", function() {
-    showTab('about');
+    showTab('home');
 });
 
 // Add hover pop-up behavior
@@ -38,19 +38,59 @@ document.querySelectorAll('.hover-popup').forEach(item => {
         popup = document.createElement('div');
         popup.className = 'popup-box';
         
-        const textSpan = document.createElement('span');
-        textSpan.innerText = item.getAttribute('data-hover');
+        const content = item.getAttribute('data-hover');
         
-        const copyButton = document.createElement('button');
-        copyButton.className = 'copy-btn';
-        copyButton.innerHTML = '📋';
-        copyButton.onclick = (e) => {
-            e.stopPropagation();
-            copyText(item.getAttribute('data-copy'));
-        };
+        if (content.includes('&#10;')) {
+            // Handle multiple lines (emails)
+            const emails = content.split('&#10;');
+            const container = document.createElement('div');
+            container.className = 'popup-content';
+            
+            emails.forEach(email => {
+                const lineDiv = document.createElement('div');
+                lineDiv.className = 'popup-line';
+                lineDiv.style.display = 'flex';
+                lineDiv.style.alignItems = 'center';
+                
+                const textSpan = document.createElement('span');
+                textSpan.innerText = email;
+                
+                const copyButton = document.createElement('button');
+                copyButton.className = 'copy-btn';
+                copyButton.style.marginLeft = '2px';
+                copyButton.innerHTML = '📋';
+                copyButton.onclick = (e) => {
+                    e.stopPropagation();
+                    copyText(email);
+                };
+                
+                lineDiv.appendChild(textSpan);
+                lineDiv.appendChild(copyButton);
+                container.appendChild(lineDiv);
+            });
+            
+            popup.appendChild(container);
+        } else {
+            // Handle single line (other contact info)
+            const lineDiv = document.createElement('div');
+            lineDiv.className = 'popup-line';
+            
+            const textSpan = document.createElement('span');
+            textSpan.innerText = content;
+            
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-btn';
+            copyButton.innerHTML = '📋';
+            copyButton.onclick = (e) => {
+                e.stopPropagation();
+                copyText(content);
+            };
+            
+            lineDiv.appendChild(textSpan);
+            lineDiv.appendChild(copyButton);
+            popup.appendChild(lineDiv);
+        }
         
-        popup.appendChild(textSpan);
-        popup.appendChild(copyButton);
         document.body.appendChild(popup);
         
         const rect = item.getBoundingClientRect();

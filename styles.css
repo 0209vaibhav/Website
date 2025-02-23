@@ -115,11 +115,12 @@ hr {
     justify-content: space-around;
     align-items: center;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    padding: 20px 0;
     width: 100%;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 900px;
+    border-bottom: 1px dashed lightgrey;
+    border-image: repeating-linear-gradient(to right, lightgrey, lightgrey 5px, transparent 5px, transparent 10px) 1;
 }
 
 .hover-popup {
@@ -134,13 +135,21 @@ hr {
     background: #000;
     color: #fff;
     font-size: 14px;
-    padding: 5px 10px;
+    padding: 8px 12px;
     border-radius: 5px;
-    white-space: nowrap;
+    z-index: 1000;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.popup-line {
     display: flex;
     align-items: center;
-    gap: 8px;
-    z-index: 1000;
+    white-space: nowrap;
 }
 
 .popup-box .copy-btn {
@@ -148,8 +157,9 @@ hr {
     border: none;
     color: #fff;
     cursor: pointer;
-    padding: 0 4px;
+    padding: 0;
     font-size: 14px;
+    transition: opacity 0.2s ease;
 }
 
 .popup-box .copy-btn:hover {
