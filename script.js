@@ -1528,12 +1528,19 @@ async function loadMindMap() {
       simulation.alpha(0.3).restart();
     }
 
+    // --- Improved force simulation for a more organic mindmap ---
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(250))
-      .force("charge", d3.forceManyBody().strength(-600))
+      .force("link", d3.forceLink(links)
+        .id(d => d.id)
+        .distance(d => 180 + Math.random() * 80) // more organic, less stiff
+        .strength(0.07) // lower strength for less rubberband effect
+      )
+      .force("charge", d3.forceManyBody().strength(-250)) // softer repulsion
+      .force("center", d3.forceCenter(window.innerWidth / 2, window.innerHeight / 2).strength(0.03)) // gentle centering
+      .force("y", d3.forceY(window.innerHeight / 2).strength(0.01)) // weak vertical gravity
       .force("collision", d3.forceCollide().radius(d => d.type === 'center' ? 90 : 80))
-      .alphaDecay(0.001)
-      .velocityDecay(0.1);
+      .alphaDecay(0.002) // slower decay for smoother settling
+      .velocityDecay(0.12); // slightly more friction
 
     updateSize();
     window.addEventListener('resize', updateSize);
