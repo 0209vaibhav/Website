@@ -1579,16 +1579,67 @@ async function loadMindMap() {
       .attr("x", -90).attr("y", -90)
       .attr("width", 180).attr("height", 90)
       .attr("clip-path", "inset(0 round 14px 14px 0 0)");
+    // Title (smaller, wrapped)
     projectNodes.append("text")
       .attr("class", "node-title")
-      .attr("x", 0).attr("y", 10)
+      .attr("x", 0).attr("y", 8)
       .attr("text-anchor", "middle")
-      .text(d => d.title);
+      .attr("font-size", 14)
+      .attr("font-weight", 700)
+      .attr("dominant-baseline", "middle")
+      .each(function(d) {
+        const text = d3.select(this);
+        const words = (d.title || "").split(" ");
+        let line = [];
+        let lineNumber = 0;
+        let lineHeight = 1.1; // ems
+        let y = 8;
+        let tspan = text.append("tspan").attr("x", 0).attr("y", y);
+        for (let i = 0; i < words.length; i++) {
+          line.push(words[i]);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > 160 && line.length > 1) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [words[i]];
+            tspan = text.append("tspan")
+              .attr("x", 0)
+              .attr("y", y + ++lineNumber * 16)
+              .text(words[i]);
+          }
+        }
+      });
+    // Subtitle (smaller, wrapped, below title)
     projectNodes.append("text")
       .attr("class", "node-subtitle")
-      .attr("x", 0).attr("y", 35)
+      .attr("x", 0).attr("y", 32)
       .attr("text-anchor", "middle")
-      .text(d => d.subtitle);
+      .attr("font-size", 10)
+      .attr("font-weight", 400)
+      .attr("fill", "#444")
+      .attr("dominant-baseline", "middle")
+      .each(function(d) {
+        const text = d3.select(this);
+        const words = (d.subtitle || "").split(" ");
+        let line = [];
+        let lineNumber = 0;
+        let lineHeight = 1.1; // ems
+        let y = 32;
+        let tspan = text.append("tspan").attr("x", 0).attr("y", y);
+        for (let i = 0; i < words.length; i++) {
+          line.push(words[i]);
+          tspan.text(line.join(" "));
+          if (tspan.node().getComputedTextLength() > 160 && line.length > 1) {
+            line.pop();
+            tspan.text(line.join(" "));
+            line = [words[i]];
+            tspan = text.append("tspan")
+              .attr("x", 0)
+              .attr("y", y + ++lineNumber * 12)
+              .text(words[i]);
+          }
+        }
+      });
     projectNodes.append("text")
       .attr("class", "node-tags")
       .attr("x", 0).attr("y", 60)
