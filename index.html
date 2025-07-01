@@ -3,260 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/brands.min.css">
     <title>0209vaibhav Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <div class="logo" style="font-size: 28px; font-weight: bold;"><span class="magenta" style="color: #ff0080;">0209</span><span class="black" style="color: #000;">VAIBHAV</span></div>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="showTab('home')">Home</a></li>
-                <li><a href="#" onclick="showTab('about')">About</a></li>
-                <li><a href="#" onclick="showTab('works')">Works</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="contact-info">
-        <span class="hover-popup" data-hover="0209vaibhav@gmail.com" data-copy="0209vaibhav@gmail.com">✉️ Email</span>
-        <span class="hover-popup" data-hover="+1 646 342 8743" data-copy="+1 646 342 8743">📞 Phone</span>
-        <span class="hover-popup" data-hover="+91 77381709353" data-copy="+91 77381709353">💬 WhatsApp</span>
-        <span class="hover-popup" data-hover="linkedin.com/in/vaibhav-jain-2a7569289" data-copy="linkedin.com/in/vaibhav-jain-2a7569289">🔗 LinkedIn</span>
-        <span class="hover-popup" data-hover="github.com/0209vaibhav" data-copy="github.com/0209vaibhav">🐱 GitHub</span>
-    </div>
+        <div class="header-links-block">
+            <div class="social-icons-row">
+                <a href="https://www.linkedin.com/in/0209vaibhav/" target="_blank" title="LinkedIn" class="social-icon-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="mailto:0209vaibhav@gmail.com" title="Email" class="social-icon-link"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.instagram.com/vaibhavjain_0209/" title="Instagram" class="social-icon-link"><i class="fab fa-instagram"></i></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about" title="About"><i class="fas fa-user"></i><span>VAIBHAV JAIN</span></a></li>
+                    <!-- <li><a href="#home" title="Home"><i class="fas fa-brain"></i><span>INDEX</span></a></li> -->
+                    <li><a href="#computation" title="Computation"><i class="fas fa-code"></i><span>COMPUTATION</span></a></li>
+                    <li><a href="#architecture" title="Architecture"><i class="fas fa-building"></i><span>ARCHITECTURE</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
 
     <main>
-        <section id="home" class="tab-content active">
-            <h1>Welcome to my website</h1>
-            <p>Check out my about tab to view my <a href="#" onclick="showTab('about')" class="home-link">resume/cv<span>📄</span></a> and <a href="#" onclick="showTab('works')" class="home-link">portfolio<span>🎨</span></a></p>
-            <hr>
+        <section id="about" class="scroll-section">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">VAIBHAV JAIN</h1>
+                    <p class="hero-subtitle">Design Technologist | Architect | Storyteller</p>
+                    <div class="about-plain-text">
+                        <div class="about-list">
+                            <div class="about-row"><span>M.S. Computation Design Practices, GSAPP, Columbia University, New York</span><span class="about-date">2024-25</span></div>
+                            <div class="about-row"><span>B.Arch, (K.R.V.I.A), Mumbai</span><span class="about-date">2017-2022</span></div>
+                            <br>
+                            <div class="about-row"><span>Architect, @ Sameep Padora & Associates(sP+a), Mumbai</span><span class="about-date">2022-2024</span></div>                            
+                            <div class="about-row"><span>Production Designer, Mumbai</span><span class="about-date">2022</span></div>
+                            <div class="about-row"><span>Intern, @ Abraham John Architects(AJA), Mumbai</span><span class="about-date">2021</span></div>
+                            <div class="about-row"><span>Freelance, Architecture and Interior Design, Mumbai</span><span class="about-date">2018-2024</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- <hr> -->
         
-        <section id="about" class="tab-content">
-            <h1>About Me</h1>
-            <p><span class="important-text">The world is my stage, and I am the storyteller, weaving poetry into the world through design.</span> Every line a verse, every space a canvas, every story a path seeking its voice, every problem an opportunity to innovate, every interaction a rhythm in the symphony of design. Through the language of <span class="highlight-text">story, design, and tech</span>, I bring unseen moments to life, weaving meaning into the tangible and the abstract.</p>
-            
-            <p>I was born with the <span class="highlight-text">ability</span> to design and impact the world around me. My journey began with <span class="highlight-text">architecture</span>, shaping built spaces that define how people live and interact. It expanded into <span class="highlight-text">interior design</span>, crafting environments that enrich everyday experiences, and into <span class="highlight-text">production design</span>, framing cinematic worlds that tell compelling stories. Now, as a <span class="highlight-text">Computational Thinker</span>, I merge design thinking with technology, algorithms, and spatial intelligence.</p>
-            
-            <p><span class="important-text">"I am an Architect and Computational Designer by mind, but a storyteller at heart."</span></p>
-            
-            <p>I strive to <span class="highlight-text">discover the narratives woven into people's lives and the world around us</span>, using them to develop interventions that are innovative yet poetic, driven by logic yet filled with soul. I seek to craft designs that make the world more intuitive, meaningful, and connected, ensuring that technology enhances human experience—without losing the beauty, rhythm, and poetry that make life extraordinary.</p>
-            
-            <hr>
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>M.S. Computational Design Practice</h3>
-                <p class="institution">Graduate School of Architecture, Planning and Preservation (GSAPP)</p>
-                <p class="school">Columbia University, New York, USA</p>
-                <p class="year">2024 - 2025</p>
+        <!-- <section id="home" class="scroll-section">
+            <div id="mindmap-container">
+              <svg id="mindmap"></svg>
             </div>
-            
-            <div class="education-item">
-                <h3>Bachelor of Architecture</h3>
-                <p class="institution">Kamla Raheja Vidyanidhi Institute of Architecture And Environmental Studies (K.R.V.I.A)</p>
-                <p class="school">Mumbai, India</p>
-                <p class="year">2017 - 2022 | CGPA - 8.54</p>
-            </div>
-            <hr>
-            <h2>Professional Work</h2>
-            <div class="education-item">
-                <h3>Junior Architect</h3>
-                <p class="institution">Sameep Padora & Associates - sP+a, Mumbai, India</p>
-                <p class="year">Nov 2022 - May 2024</p>
-                <div class="work-details">
-                    <div class="project">
-                        <p class="project-title">Dalmia Polypro PET Recycling Plant Nashik, Mumbai, India</p>
-                        <p class="project-desc">Admin Building, Entrance Block + Occupational Health Centre, Canteen, Temple, Security Cabin.</p>
-                        <p class="responsibilities">Lead Architect of the project, Concept Design, Design Development, Resolution, 3D views, Presentation drawings, Construction Drawings, Site visits and Consultant coordination.</p>
-                    </div>
-                    <div class="project">
-                        <p class="project-title">High Performance Centre - Chennai Super Kings, Chennai, India</p>
-                        <p class="responsibilities">Design Development, Resolution, 3D views, Presentation Drawings and Consultant coordination.</p>
-                    </div>
-                    <div class="project">
-                        <p class="project-title">Commercial Office Building - KSM-66 Pharma, Hyderabad, India</p>
-                        <p class="responsibilities">Plan resolution, Facade exploration, 3D views and Presentation drawings.</p>
-                    </div>
-                    <div class="project">
-                        <p class="project-title">Residential Building - Kanoria House, Alibaug, India</p>
-                        <p class="responsibilities">Grasshopper coding and 3D geometry for Flooring pattern.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="education-item">
-                <h3>Intern Architect</h3>
-                <p class="institution">Abraham John Architects - AJA, Mumbai, India</p>
-                <p class="year">Jan 2021 - July 2021</p>
-                <div class="work-details">
-                    <div class="project-group">
-                        <p class="project-title">Lead Projects:</p>
-                        <ul>
-                            <li>Trinity Apartment</li>
-                            <li>Lokal Park-let Restaurant, New Jersey</li>
-                        </ul>
-                        <p class="responsibilities">Lead Architect of the project, Concept Design, Design Development, planning and Resolution, 3D views, Presentation drawings, Site visits and Consultant coordination.</p>
-                    </div>
-                    <div class="project-group">
-                        <p class="project-title">Other Projects:</p>
-                        <ul>
-                            <li>Public Plaza Linking Road Junction</li>
-                            <li>Celebrity Luxury Apartment in Rustomjee</li>
-                            <li>Nathani Traffic Island Amphitheatre</li>
-                            <li>Open Spaces Book for Mumbai</li>
-                            <li>Roundabout Junction at 19th Road</li>
-                            <li>Carter Road to Mahim Fort Promenade</li>
-                            <li>Juhu Fire Station Redevelopment</li>
-                            <li>St. Stephen's Garden Development</li>
-                        </ul>
-                        <p class="responsibilities">Concept Design, Design Development, planning and Resolution, 3D views, Presentation drawings and Site visits</p>
-                    </div>
-                </div>
-            </div>
+        </section> -->
 
-            <div class="education-item">
-                <h3>Junior Production Designer</h3>
-                <p class="institution">Baked Brick Productions & Artree Productions</p>
-                <p class="year">June 2022 - Nov 2022</p>
-                <p class="responsibilities">Assisted in the production of 11 advertisements, photoshoots, and videoshoots, enhancing creative storytelling and visual execution.</p>
-            </div>
-
-            <div class="education-item">
-                <h3>Freelance Architect and Interior Designer</h3>
-                <p class="institution">Independent Practice</p>
-                <p class="year">July 2018 - Present</p>
-                <p class="responsibilities">Crafted 10 diverse projects spanning office spaces, residential environments, farmhouses, and a multifunctional cloud kitchen.</p>
-            </div>
-            <!-- Publications Section -->
-            <hr>
-            <h2>Publications</h2>
-            <div class="education-item">
-                <h3>Research and Documentation</h3>
-                <ul class="publications-list">
-                    <li>Architecture of Liminal Identities (Kohima Study Trip Documentation 1) - July - Sept 2020</li>
-                    <li>Objects, Institutions, Identities (Kohima Study Trip Documentation 1) - July - Sept 2020</li>
-                    <li>Scrutinization of "THE FAMILIAL" Sensitivity in Mumbai (Design Dissertation Volume) - Aug - Dec 2020</li>
-                </ul>
-            </div>
-            <!-- End of Publications Section -->
-            <hr>
-            <h2>Electives</h2>
-            <div class="education-item">
-                <h3>M.S. Computational Design Practice (MS.CDP)</h3>
-                <ul class="electives-list">
-                    <li>Methods as Practice, Practice as Methods (Studio) - Violet Whitney, William Martin</li>
-                    <li>Computational Modeling - Luc Wilson, Meli Harvey</li>
-                    <li>Mapping Systems - Mario Giampieri</li>
-                    <li>Computational Design Workflows - Celeste Layne</li>
-                    <li>Explore, Explain, Propose (Studio) - Laura Kurgan, Snoweria Zhang</li>
-                    <li>Design Intelligence - Danil Nagy</li>
-                    <li>Seeing with Algorithms - Catherine Griffiths</li>
-                    <li>Metatool - Dan Taeyoung</li>
-                    <li>Spatial UX - Violet Whitney</li>
-                    <li>Data Visualization for Architecture, Urbanism and the Humanities - Jia Zhang</li>
-                    <li>Design in Action (Studio) - Seth Thompson, Catherine Griffiths</li>
-                    <li>Spatial Data Narratives - Josh Begley</li>
-                    <li>Spatial AI - William Martin</li>
-                    <li>Exploring Urban Data with Machine Learning - Jonathan Stiles</li>
-                </ul>
-            </div>
-            <hr>
-            <h2>Technical Skills</h2>
-            <div class="skills-section">
-                <div class="skill-category">
-                    <h3>Web Development</h3>
-                    <ul class="skills-list">
-                        <li>Front-end: HTML, JavaScript</li>
-                        <li>Styling & UI: CSS, Figma</li>
-                        <li>Web Rendering & Data Viz: Three.js, D3.js</li>
-                        <li>Back-end: Java, Python, Node.js</li>
-                        <li>Database & Storage: Firebase</li>
-                        <li>Code Management & Collab: GitHub</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Computational Tools</h3>
-                    <ul class="skills-list">
-                        <li>GIS & Mapping: QGIS, Mapbox, Leaflet</li>
-                        <li>Machine Learning: Anaconda, TensorFlow, Roboflow, Hugging Face</li>
-                        <li>AI Tools: OpenAI, ChatGPT, Midjourney</li>
-                        <li>IoT & Automation: IFTTT, Arduino IDE</li>
-                    </ul>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Design Software</h3>
-                    <ul class="skills-list">
-                        <li>2D Design: AutoCAD</li>
-                        <li>3D Design: SketchUp, Rhino + Grasshopper + plugins</li>
-                        <li>BIM: Revit, Archicad</li>
-                        <li>Rendering & Simulation: V-Ray, Lumion, Enscape, Twinmotion, Blender</li>
-                        <li>Graphics & Storytelling: Adobe Creative Cloud, Microsoft Suite, Procreate</li>
-                    </ul>
-                </div>
-            </div>
-            <hr>
-            <h2>Competitions</h2>
-            <div class="education-item">
-                <ul class="achievements-list">
-                    <li>2021 - Asia Young Designer Award by Nippon Paints (Entry for Dissertation)</li>
-                    <li>2021 - Arch Thesis of the Year by The Charette (Entry for Dissertation)</li>
-                    <li>2021 - KVDF Forum by CEPT, Ahmedabad (Entry for Dissertation)</li>
-                    <li>2021 - WWF Competition (Collab with AJA)</li>
-                    <li>2021 - Tata Steel Competition (Collab with AJA)</li>
-                    <li>2021 - Objects Institutions Identities (COA Competition)</li>
-                    <li>2020 - Objects Institutions Identities (Virtual Exhibition @ CEPT)</li>
-                    <li>2020 - A Homestead in Sundarbans (By Sundabari)</li>
-                    <li>2020 - The Little Big Loo: Rethinking Public Toilet (By Volume Zero)</li>
-                    <li>2019 - Sidhpur Documentation (COA Competition)</li>
-                </ul>
-            </div>
-            <hr>
-            <h2>Achievements</h2>
-            <div class="education-item">
-                <ul class="achievements-list">
-                    <li>2022 - Dissertation Talk @ Thesis Forum by L.S. Raheja</li>
-                    <li>2022 - Future Exhibition 2022 by GAFA (Shortlisted for Dissertation)</li>
-                    <li>2022 - K.R.V.I.A Colloquium (Shortlisted for Dissertation)</li>
-                    <li>2021 - Rank 1 (Bachelor of Architecture)</li>
-                    <li>2021 - Tata Steel Competition @ AJA (Overall Academics)</li>
-                    <li>2021 - Rank 1 (Overall Academics)</li>
-                    <li>2020 - Rank 1 (Technology & Dissertation)</li>
-                    <li>2020 - A Homestead in Sundarbans by Sundabari (Shortlisted in Top 50)</li>
-                    <li>2019 - Rank 1 (Architectural Design)</li>
-                    <li>2018 - Rank 1 (Overall Academics)</li>
-                    <li>2017 - Top 5 (Overall Academics)</li>
-                </ul>
-            </div>
-            <hr>
-        </section>
-        <section id="works" class="tab-content">
+        <hr>
+        
+        <section id="computation" class="scroll-section">
             <div class="work-item">
+                <h3 class="project-title">MEMENTO</h3>
+                <p class="project-subtitle">Real-time Urban Experiences</p>
+                <p class="project-faculty">
+                    Project advisor_Juan Francisco Saldarriaga
+                </p>
+                <div class="project-links">
+                    <a href="https://0209vaibhav.github.io/Memento/" target="_blank" class="project-link">
+                        Web-app platform<span class="link-icon">→</span>  
+                    </a>
+                    <a href="https://gsapp-cdp.github.io/archive/projects/2025/memento/" target="_blank" class="project-link">
+                        Project Documentation<span class="link-icon">→</span>  
+                    </a>
+                </div>
+
                 <div class="work-item-thumbnail">
                     <div class="video-container">
-                        <img src="Data/Works/Memento - Web-app platform/cover.png" alt="Memento Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/Memento - Web-app platform/thumbnail.png" alt="Memento Cover" class="video-hover-cover">
                         <a href="https://youtu.be/P2saCVSWqFY" target="_blank" class="youtube-hover-btn">▶ Watch on YouTube</a>
                         <div class="video-overlay"></div>
                         <iframe src="https://www.youtube.com/embed/P2saCVSWqFY?autoplay=1&mute=1&loop=1&playlist=P2saCVSWqFY&modestbranding=1&controls=0&showinfo=0&rel=0" title="MEMENTO Backend Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                <h3 class="work-item-content-title">MEMENTO</h3>
+                
                 <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">Real time Urban Experiences</p>
-                        <p class="project-faculty">Project advisor - Juan Francisco Saldarriaga</p>
-                        <div class="project-links">
-                            <a href="https://0209vaibhav.github.io/Memento/" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> Web-app platform
-                            </a>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://gsapp-cdp.github.io/archive/projects/2025/memento/" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> Project Documentation
-                            </a>
-                        </div>
+                    <div class="concept-section">
+                        <h4>Concept</h4>
                         <div class="tags">
                             <span class="tag">Real-time Mapping</span>
                             <span class="tag">Urban Data Collection</span>
@@ -265,303 +97,251 @@
                             <span class="tag">Personalization</span>
                             <span class="tag">Curation algorithms</span>                            
                         </div>
-                    </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">MEMENTO is a real-time platform that captures urban experiences happening across the city, aiming to prevent people from drifting into oblivion (the state of being unaware or unconscious of what is happening) and instead transforming those moments into engaging odysseys (a long and eventful or adventurous journey or experience).
-                            <br>
-                            
+                        <p class="project-description">MEMENTO is a real-time platform that captures urban experiences happening across the city, aiming to prevent people from drifting into oblivion (the state of being unaware or unconscious of what is happening) and instead transforming those moments into engaging odysseys (a long and eventful or adventurous journey or experience).                  
                             It empowers users to discover, capture, and engage with the mementos around them during their commutes, turning everyday journeys into moments of exploration, creation, and interaction.
                             MEMENTO serves as an interaction, intersection, and interplay between the city, its people, and their experiences — a platform:
-                            By the people and the city,
-                            For the people and the city,
-                            Of the people and the city.</p>
+                            By the people and the city, For the people and the city, Of the people and the city.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Real-time APIs</span>
+                            <span class="tag">Geolocation Services</span>
+                            <span class="tag">User Experience Design</span>
+                            <span class="tag">Mobile-First Development</span>
+                            <span class="tag">Interactive Mapping</span>                            
+                        </div>
+                        <p class="project-description">The MEMENTO web app is built using HTML, CSS, and JavaScript, with Firebase as the backend for real-time data storage and authentication. The map interface is powered by Mapbox for live visualization of user-generated content. Users can create, store, and explore mementos—short multimedia entries capturing urban experiences. The platform supports media uploads, geolocation tagging, timestamping, and filtering by categories and tags. The UI includes multiple tabs for capturing, exploring, and archiving mementos. Data is structured to support dynamic updates, user customization, and public dataset integration, enabling a seamless, exploratory journey across the city's emotional and spatial fabric.</p>
                     </div>
                 </div>
-            </div>
+
             <br>
-            <hr>
-            <br>
+
             <div class="work-item">
+                <hr>
+                <h3 class="project-title">ML in MEMENTO</h3>
+                <p class="project-subtitle">ML Pipeline for Automated Urban Experience Classification</p>
+                <p class="project-faculty">
+                    Project advisor_Jonathan E. Stiles
+                </p>
+                <div class="project-links">
+                    <a href="https://0209vaibhav.github.io/Machine-Learning_MEMENTO/" target="_blank" class="project-link">
+                        View Article<span class="link-icon">→</span>  
+                    </a>
+                </div>
+
                 <div class="work-item-thumbnail">
                     <div class="video-container">
-                        <img src="Data/Works/Memento - Computation and Machine learning/cover.png" alt="Computation and Machine Learning in MEMENTO Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/Memento - Computation and Machine learning/thumbnail.png" alt="Computation and Machine Learning in MEMENTO Cover" class="video-hover-cover">
                         <a href="https://youtu.be/xdrNuFtMV4U" target="_blank" class="youtube-hover-btn">▶ Watch on YouTube</a>
                         <div class="video-overlay"></div>
                         <iframe src="https://www.youtube.com/embed/xdrNuFtMV4U?autoplay=1&mute=1&loop=1&playlist=xdrNuFtMV4U&modestbranding=1&controls=0&showinfo=0&rel=0" title="MEMENTO Backend Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
-                <h3 class="work-item-content-title">Role of Machine Learning and Computation in MEMENTO</h3>
                 <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">ML Pipeline for Automated Urban Experience Classification</p>
-                        <p class="project-faculty">Exploring Urban Data with Machine Learning - Jonathan E. Stiles</p>
-                        <div class="project-links">
-                            <a href="https://0209vaibhav.github.io/Machine-Learning_MEMENTO/" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Project
-                            </a>
-                        </div>
+                    <div class="concept-section">
+                        <h4>Concept</h4>
                         <div class="tags">
                             <span class="tag">Machine Learning</span>
                             <span class="tag">Web-data Scraping</span>
                             <span class="tag">Urban Analytics</span>
                             <span class="tag">Data Creation</span>
                             <span class="tag">Data Structures</span>
-                            <span class="tag">Cloud Computing</span>
-
+                            <span class="tag">Cloud Computing</span>                       
                         </div>
+                        <p class="project-description">The Machine Learning pipeline in MEMENTO automates classification and tagging of public urban content from sources like Secret NYC, Reddit, and more. It uses three models—Category Classification, Tag Prediction, and Duration Estimation—trained with supervised learning. Logistic Regression and Random Forests predict categories and multiple tags, while Decision Trees estimate memento durations. This pipeline transforms raw, unstructured data into structured, semantically rich mementos aligned with MEMENTO’s taxonomy. Automating this process ensures greater consistency, reduces manual effort, and supports scalable growth. It bridges urban storytelling and AI, enriching the user experience by embedding contextual intelligence directly into the platform’s curated dataset.</p>
                     </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">The Machine Learning pipeline for public mementos in MEMENTO is designed to automate the classification and tagging of public content sourced from platforms such as Secret NYC, Reddit, NYC Bucket List, Newsbreak, and more.
-                            <br>
-                            The pipeline consists of three primary models — Category Classification, Tag Prediction, and Duration Estimation — each trained using supervised learning techniques. Logistic Regression with One-vs-Rest strategy and Random Forest classifiers are employed to predict relevant categories and multiple tags, while Decision Trees handle ordinal duration estimation.
-                            By implementing this ML pipeline, MEMENTO enhances the consistency and accuracy of content classification, enabling the platform to transform unstructured public content into structured, contextually enriched mementos that align with its existing taxonomy.</p>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Supervised Learning</span>
+                            <span class="tag">Data Pipeline Development</span>
+                            <span class="tag">Model Training</span>
+                            <span class="tag">Feature Engineering</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Classification Algorithms</span>                       
+                        </div>
+                        <p class="project-description">This project builds a full ML pipeline for urban content classification using Python-based tools like BeautifulSoup, Selenium, and Scikit-learn. After scraping data, it undergoes preprocessing: text cleaning, feature extraction, and label encoding. Three supervised models are trained—Logistic Regression for categories, Random Forest for multi-label tags, and Decision Tree for estimating duration—using annotated training data. Models are evaluated via cross-validation and updated automatically through cloud-based retraining schedules. API endpoints integrate predictions into the live web app. This structured pipeline not only ensures high-quality metadata tagging but also streamlines the inclusion of public mementos into MEMENTO’s evolving experience ecosystem.</p>
                     </div>
                 </div>
-            </div>
+
             <br>
-            <hr>
-            <br>
+
                <div class="work-item">
+                <hr>
+                <h3 class="project-title">Studio In Flux</h3>
+                <p class="project-subtitle">How spatial configurations influence movement within the Columbia GSAPP Studio.</p>
+                <p class="project-faculty">Project advisor_William Martin<br>Collaborators_Manas Bhatia</p>
+                <div class="project-links">
+                    <a href="https://0209vaibhav.github.io/Studio-In-Flux/" target="_blank" class="project-link">
+                        View Article<span class="link-icon">→</span>  
+                    </a>
+                    <a href="https://docs.google.com/presentation/d/1MvKYi_08KWYSfHqrNPQOdNOvXlaqPNEvqO533EPPdLk/edit?slide=id.g34d47eef955_0_839#slide=id.g34d47eef955_0_839" target="_blank" class="project-link">
+                        View Documentation<span class="link-icon">→</span>  
+                    </a>
+                    <a href="https://0209vaibhav.github.io/Studio-In-Flux/Simulation/" target="_blank" class="project-link">
+                        View Simulation<span class="link-icon">→</span>  
+                    </a>
+                </div>
+
                 <div class="work-item-thumbnail">
                     <div class="video-container">
-                        <img src="Data/Works/Studio In Flux/thumbnail.png" alt="Studio In Flux Cover" class="video-hover-cover">
-                        <img src="Data/Works/Studio In Flux/cover.gif" alt="Studio In Flux GIF" class="project-gif">
+                        <img src="Data/Works/Computation/Studio In Flux/thumbnail.png" alt="Studio In Flux Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/Studio In Flux/cover.gif" alt="Studio In Flux GIF" class="project-gif">
                     </div>
                 </div>
-                <h3 class="work-item-content-title">Studio In Flux</h3>
                 <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">how spatial configurations influence movement within the Columbia GSAPP Studio.</p>
-                        <p class="project-faculty">Spatial AI - William Martin</p>
-                        <p class="project-faculty">in collaboration with Manas Bhatia</p>
-                        <div class="project-links">
-                            <a href="https://0209vaibhav.github.io/Studio-In-Flux/" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Article
-                            </a>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://docs.google.com/presentation/d/1MvKYi_08KWYSfHqrNPQOdNOvXlaqPNEvqO533EPPdLk/edit?slide=id.g34d47eef955_0_839#slide=id.g34d47eef955_0_839" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Documentation
-                            </a>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://0209vaibhav.github.io/Studio-In-Flux/Simulation/" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Simulation
-                            </a>
-                        </div>
+                    <div class="concept-section">
+                        <h4>Concept</h4>
                         <div class="tags">
                             <span class="tag">Spatial Simulation</span>
                             <span class="tag">Agent-Based Modeling</span>
                             <span class="tag">Circulation Analysis</span>
                             <span class="tag">Spatial AI</span>
                             <span class="tag">Workspace Optimization</span>
-                            <span class="tag">Behavior Mapping</span>
+                            <span class="tag">Behavior Mapping</span>          
                         </div>
+                        <p class="project-description">Studio-In-Flux investigates how spatial configurations impact movement and interaction within the Columbia GSAPP Studio. Through agent-based simulations, the project maps the studio as a dynamic digital environment, tracking how users navigate desks, chairs, and paths. It reveals hidden circulation patterns, behavior trends, and spatial inefficiencies to reimagine collaborative workspaces. Real-time simulations generate heatmaps and performance metrics, helping evaluate layout effectiveness. By integrating behavioral insights and spatial AI, the project proposes data-informed spatial interventions that enhance interaction, reduce bottlenecks, and improve flow. Studio-In-Flux makes the invisible legibility of space visible, creating a framework for more responsive, engaging design environments.</p>
                     </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">Studio-In-Flux is an experimental research project that examines how spatial configurations influence movement and interaction within the Columbia GSAPP Studio. By analyzing the dynamic interplay between people, objects, and spatial arrangements, the project seeks to uncover hidden circulation patterns and behavioral trends that shape the studio environment. The goal is to reimagine workspace design by making these invisible dynamics visible and actionable.</p>
-                        
-                        <p class="project-description">The project employs a computational simulation built on agent-based modeling, mapping the studio as a responsive digital environment. The simulation tracks how agents (students, faculty, staff) navigate desks, chairs, and pathways, generating real-time heatmaps and efficiency scores for different spatial layouts. Using data-driven analysis and spatial AI, Studio-In-Flux identifies bottlenecks, optimizes circulation, and explores how spatial interventions can foster more effective, engaging studio experiences.</p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <hr>
-            <br>
-            <div class="work-item">
-                <div class="work-item-thumbnail">
-                    <div class="video-container">
-                        <img src="Data/Works/Oblivian to Odyssey/thumbnail.jpg" alt="Oblivian to Odyssey Cover" class="video-hover-cover">
-                        <img src="Data/Works/Oblivian to Odyssey/cover.gif" alt="Oblivian to Odyssey GIF" class="project-gif">
-                    </div>
-                </div>
-                <h3 class="work-item-content-title">Oblivian to Odyssey</h3>
-                <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">Explore, Explain, Propose</p>
-                        <p class="project-faculty">By Laura Kurgan, Snoweria Zhang</p>
-                        <div class="project-links">
-                            <a href="https://gsapp-cdp.github.io/colloquium-2-2024/work/vaibhav/" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Project
-                            </a>
-                        </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
                         <div class="tags">
-                            <span class="tag">Urban Engagement</span>
-                            <span class="tag">Commuter Experience</span>
-                            <span class="tag">Spatial Computing</span>
-                            <span class="tag">Gaze Patterns</span>
-                            <span class="tag">Interactive Exploration</span>
-                            <span class="tag">City-Driven Discovery</span>
+                            <span class="tag">Agent-Based Modeling</span>
+                            <span class="tag">Spatial Analysis</span>
+                            <span class="tag">Behavioral Simulation</span>
+                            <span class="tag">Heatmap Generation</span>
+                            <span class="tag">Computational Design</span>
+                            <span class="tag">Performance Metrics</span>          
+                        </div>
+                        <p class="project-description">Agent-based modeling software was used to simulate real-time movement within the studio, representing students, faculty, and staff as dynamic agents. Behavioral parameters—like interaction frequency and movement flow—were informed by onsite observations. The simulation engine generated circulation heatmaps and layout efficiency metrics. Spatial analysis tools identified patterns and bottlenecks, enabling iterative refinements to optimize desk and path layouts. The simulation’s results were validated through comparison with real-world studio use. Performance indicators included interaction density, circulation smoothness, and space utilization. This computational approach provided actionable insights for designing flexible, efficient, and socially supportive academic studio spaces.</p>
+                    </div>
+                </div>
 
-                        </div>
-                    </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">This research delves into the disconnection between people and their urban surroundings, examining how gaze patterns, physical interactions, and time-location dynamics have transformed commutes into passive, oblivious routines. By mapping these behaviors in Oblivion, the study highlights the erosion of meaningful engagement with the city.</p>
-                        <p class="project-description">In response, Odyssey emerges as a speculative intervention, reimagining commutes as opportunities for active exploration and connection. Designed for those seeking more than routine transit, it leverages AI-driven personalization and spatial computing to turn city streets into interactive playgrounds, fostering deeper interactions and rediscovery of the urban landscape.</p>
-                    </div>
-                </div>
-            </div>
             <br>
-            <hr>
+
             <br>
+
             <div class="work-item">
+                <hr>
+                <h3 class="project-title">The Urban Fringe</h3>
+                <p class="project-subtitle">Spatial Thresholds Between Public Sidewalk Life and Private Eating Enterprises</p>
+                <p class="project-faculty">
+                    Project advisor_Violet Whitney, William Martin, Mario Giampieri, Luc Wilson and Meli Harvey
+                </p>
+                <div class="project-links">
+                    <a href="https://0209vaibhav.github.io/The-Urban-Fringe/" target="_blank" class="project-link">
+                        View Project<span class="link-icon">→</span>  
+                    </a>
+                </div>
                 <div class="work-item-thumbnail">
                     <div class="video-container">
-                        <img src="Data/Works/Bento/LIC_RADIUS-A_Exploded-Diagram.jpg" alt="Bento Cover" class="video-hover-cover">
-                        <img src="Data/Works/Bento/1_XanRqU1TorG1MqMd0F1ynQ.gif" alt="Bento GIF" class="project-gif">
+                        <img src="Data/Works/Computation/The Urban Fringe/thumbnail.png" alt="The Urban Fringe Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/The Urban Fringe/cover.gif" alt="The Urban Fringe GIF" class="project-gif">
                     </div>
                 </div>
-                <h3 class="work-item-content-title">BENTO</h3>
                 <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">Next-Gen Retail Store Management Platform</p>
-                        <p class="project-faculty">Design Intelligence By Danil Nagy</p>
-                        <p class="project-faculty"> in collaboration with Chien-Ta (Genda) Lin, Yilin Zheng, Yuxi (Sissie) Dai And Zhiqing (Catherine) Ye</p>
-                        <div class="project-links">
-                            <a href="https://medium.com/design-intelligence-course/bento-an-application-for-the-retail-store-of-the-next-generation-2d2251144d83" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Project
-                            </a>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">Retail Optimization</span>
-                            <span class="tag">Spatial Analytics</span>
-                            <span class="tag">Algorithmic Geometry</span>
-                            <span class="tag">Data-Driven Design</span>
-                            <span class="tag">Layout Optimization</span>
-                            <span class="tag">Context-Based Layouts</span>
-                        </div>
-                    </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">BENTO is a next-generation platform designed to optimize retail store management through data-driven spatial analysis and algorithmic geometry. The project leverages customer behavior insights, spatial flow patterns, and sales data to generate adaptive store layouts that enhance both product placement and operational efficiency. By transforming retail spaces into dynamic, data-responsive environments, BENTO aims to improve customer experiences while maximizing space utilization.</p>
-                        <p class="project-description">To achieve this, BENTO integrates computational design tools like Rhino and Grasshopper, utilizing an Adjacency Layout Generator to create context-specific spatial configurations. The platform incorporates real-time data inputs from NYC Open Data, enabling tailored analysis for specific urban settings. Machine learning algorithms further refine layout strategies, generating actionable recommendations that align spatial arrangements with observed user behavior. Through this data-driven approach, BENTO bridges the gap between spatial design and retail management, creating more intuitive, impactful retail environments.</p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <hr>
-            <br>
-            <div class="work-item">
-                <div class="work-item-thumbnail">
-                    <img src="Data/Works/Hue knew/1.PNG" alt="Hue Knew - Data Visualization Project" style="width: 100%; height: auto;">
-                </div>
-                <h3 class="work-item-content-title">Hue Knew</h3>
-                <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">Interactive Film Recognition Game</p>
-                        <p class="project-faculty">Data Visualization for Architecture, Urbanism and the Humanities - Jia Zhang</p>
-                        <p class="project-faculty">in collaboration with Hao Lee and Julia Kwon</p>
-                        <div class="project-links">
-                            <a href="https://halfward.github.io/DataViz-GroupProj/" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Project
-                            </a>
-                        </div>
-                        <div class="tags">
-                            <span class="tag">Film Recognition</span>
-                            <span class="tag">Data Visualization</span>
-                            <span class="tag">API Integration</span>
-                            <span class="tag">Film Analysis</span>
-                            <span class="tag">User Experience</span>
-                            <span class="tag">Performance Analytics</span>
-                        </div>
-                    </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">Hue Knew is an interactive quiz game that challenges players to identify films based on blurred stills and posters, testing their ability to deduce genre, release year, and title from abstracted visuals. By integrating the TMDB API, the game ensures a continuously updated content pool, creating a dynamic and engaging cinematic experience.</p>
-                        <p class="project-description">Data visualization plays a key role in Hue Knew, with a dashboard that tracks player performance, revealing insights into film recognition patterns and genre-specific trends. This analytical layer transforms the game into a learning tool, merging entertainment with data-driven exploration of cinema.</p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <hr>
-            <br>
-            <div class="work-item">
-                <div class="work-item-thumbnail">
-                    <div class="video-container">
-                        <img src="Data/Works/Gaze Tracker/evolution.jpg" alt="Gaze Tracker Cover" class="video-hover-cover">
-                        <img src="Data/Works/Gaze Tracker/cover.gif" alt="Gaze Tracker GIF" class="project-gif">
-                    </div>
-                </div>
-                <h3 class="work-item-content-title">Gaze Tracker: </h3>
-                <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">Mapping and Shaping Attention during OBLIVIAN</p>
-                        <p class="project-faculty">Metatool by Dan Taeyoung</p>
-                        <div class="project-links">
-                            <a href="https://0209vaibhav.github.io/Meta-Tool_INTERNAL/Vaibhav/Attentional%20Theory/index.html" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Project
-                            </a>
-                        </div>
+                    <div class="concept-section">
+                        <h4>Concept</h4>
                         <div class="tags">
                             <span class="tag">Attention Mapping</span>
                             <span class="tag">Gaze Tracking</span>
                             <span class="tag">Spatial Awareness</span>
                             <span class="tag">Habit Reformation</span>
                             <span class="tag">Urban Engagement</span>
-                            <span class="tag">Real-Time Feedback</span>
+                            <span class="tag">Real-Time Feedback</span>      
                         </div>
+                        <p class="project-description">The Urban Fringe explores the delicate spatial boundary between public sidewalks and private dining spaces in urban environments. Through close observation and mapping, the project reveals how restaurant seating encroaches into public space, shaping pedestrian behavior, access, and social interaction. This threshold, often overlooked, becomes a stage for informal urban life—where city dwellers negotiate visibility, proximity, and comfort. By documenting how physical and social boundaries blur, the project advocates for thoughtful design interventions that support both economic vitality and public vibrancy. It reframes the sidewalk not just as passage, but as a shared space for community interaction and urban expression.</p>
                     </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">In a world where screens dominate commutes, Gaze Tracker seeks to rewire attention patterns by tracking gaze directions within a 3x3 visual grid. By mapping head positions and logging time spent in each zone, it reveals habitual downward gazing and encourages users to redirect focus outward, fostering a more intentional engagement with urban surroundings.</p>
-                        <p class="project-description">Combining real-time feedback with spatial analysis, Gaze Tracker reframes attention as both a trainable muscle and a moldable practice. Each notification serves as a nudge to look up, reconnecting commuters with the city and transforming routine commutes into opportunities for spatial awareness and discovery.</p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <hr>
-            <br>
-            <div class="work-item">
-                <div class="work-item-thumbnail">
-                    <div class="video-container">
-                        <img src="Data/Works/The Urban Fringe/thumbnail.png" alt="The Urban Fringe Cover" class="video-hover-cover">
-                        <img src="Data/Works/The Urban Fringe/The urban Fringe-cover.gif" alt="The Urban Fringe GIF" class="project-gif">
-                    </div>
-                </div>
-                <h3 class="work-item-content-title">The Urban Fringe</h3>
-                <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">Investigating the Spatial Thresholds Between
-                            Public Sidewalk Life and
-                            Private Eating Enterprises</p>
-                        <p class="project-faculty">Methods as Practice, Practice as Methods - Violet Whitney, William Martin<br>Mapping Systems - Mario Giampieri</p>
-                        <div class="project-links">
-                            <a href="https://0209vaibhav.github.io/The-Urban-Fringe/" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Project
-                            </a>
-                        </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
                         <div class="tags">
-                        <span class="tag">Spatial Mapping</span>
-                        <span class="tag">Data-Driven Urbanism</span>
-                        <span class="tag">Public-Private Thresholds</span>
-                        <span class="tag">Pedestrian Flow Analysis</span>
-                        <span class="tag">Digital Mapping Systems</span>
-                        <span class="tag">Computational Analysis</span>
-                        </div>                                           
-                    </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">The Urban Fringe explores the spatial thresholds where public sidewalks intersect with private eating establishments, examining how these in-between zones shape urban experiences. These transitional spaces act as vital connectors, influencing social interactions, pedestrian movement, and the overall vibrancy of city life. By focusing on the interplay between public and private realms, the project reveals how these urban fringes serve as dynamic stages for everyday encounters and social behaviors.</p>
-                        <p class="project-description">To investigate these zones, the project employs computational analysis and spatial mapping to capture and analyze patterns of movement, social interaction, and spatial usage. Using data-driven mapping systems and digital tools, it visualizes how people navigate these thresholds, identifying key factors that impact their use and influence. The study ultimately provides insights into how urban fringes can be reimagined to foster greater connectivity, interaction, and vitality within the city.</p>
+                            <span class="tag">Field Observation</span>
+                            <span class="tag">Spatial Mapping</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Environmental Analysis</span>
+                            <span class="tag">Urban Survey</span>
+                            <span class="tag">Public-Private Interface</span>
+                        </div>
+                        <p class="project-description">The project employed field observation and photographic surveys to document spatial configurations between sidewalks and restaurant seating. Spatial mapping captured boundaries, furniture placement, and pedestrian flow patterns. Environmental analysis recorded microclimate factors like shade, sunlight, and exposure. Data visualization techniques illustrated the overlapping claims of public and private zones. Urban surveys and interviews with pedestrians and business owners uncovered lived experiences and frictions in shared space. These insights informed speculative design strategies for balancing commercial activity with public life—redefining the edge between movement and pause, commerce and commons. The methods blend qualitative and quantitative research to unpack urban sidewalk ecologies.</p>
                     </div>
                 </div>
-            </div>
-            <br>
-            <hr>
-            <br>
+
             <div class="work-item">
+                <hr>
+                <h3 class="project-title">BENTO</h3>
+                <p class="project-subtitle">Next-Gen Retail Store Management Platform</p>
+                <p class="project-faculty">
+                    Project advisor_Danil Nagy
+                    <br>
+                    Collaborators_Chien-Ta (Genda) Lin, Yilin Zheng, Yuxi (Sissie) Dai And Zhiqing (Catherine) Ye
+                </p>
+                <div class="project-links">
+                    <a href="https://medium.com/design-intelligence-course/bento-an-application-for-the-retail-store-of-the-next-generation-2d2251144d83" target="_blank" class="project-link">
+                        View Article<span class="link-icon">→</span>  
+                    </a>
+                </div>
                 <div class="work-item-thumbnail">
                     <div class="video-container">
-                        <img src="Data/Works/Sidewalk Reclamation Computing Natural Interventions/thumbnail.jpg" alt="Gaze Tracker Cover" class="video-hover-cover">
-                        <img src="Data/Works/Sidewalk Reclamation Computing Natural Interventions/ezgif.com-speed.gif" alt="Gaze Tracker GIF" class="project-gif">
+                        <img src="Data/Works/Computation/Bento/thumbnail.jpg" alt="Bento Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/Bento/cover.gif" alt="Bento GIF" class="project-gif">
                     </div>
                 </div>
-                <h3 class="work-item-content-title">Sidewalk Reclamation</h3>
                 <div class="work-item-content-flex">
-                    <div class="work-item-content-left">
-                        <p class="project-subtitle">Extending the Urban Fringe Analysis</p>
-                        <p class="project-faculty">Computational Modeling by Luc Wilson, Meli Harvey</p>
-                        <div class="project-links">
-                            <a href="https://docs.google.com/presentation/d/1P7_f0Uam8va0bKMAUgwkwhVfTj9Jn8mX7Uihps3cbbA/edit" target="_blank" class="project-link">
-                                <span class="link-icon">🔗</span> View Project
-                            </a>
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Retail Optimization</span>
+                            <span class="tag">Spatial Analytics</span>
+                            <span class="tag">Algorithmic Geometry</span>
+                            <span class="tag">Data-Driven Design</span>
+                            <span class="tag">Layout Optimization</span>
+                            <span class="tag">Context-Based Layouts</span>      
                         </div>
+                        <p class="project-description">BENTO is a next-generation platform that bridges spatial design and retail management using data-driven insights. By analyzing customer movement, product interaction, and sales data, it creates adaptive layouts that optimize space utilization and improve shopper experience. The platform leverages algorithmic geometry and real-time NYC Open Data to generate context-specific store arrangements. At its core is an Adjacency Layout Generator powered by computational tools like Rhino and Grasshopper. BENTO transforms static stores into dynamic systems that respond to behavioral patterns, offering layout strategies tailored to each retail setting. It delivers intuitive, high-impact environments that enhance both efficiency and engagement.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Computational Modeling</span>
+                            <span class="tag">Algorithmic Geometry</span>
+                            <span class="tag">Data Integration</span>
+                            <span class="tag">Layout Generation</span>
+                            <span class="tag">Performance Analysis</span>
+                            <span class="tag">Parametric Modeling</span>      
+                        </div>
+                        <p class="project-description">The BENTO system was developed using Rhino and Grasshopper for parametric layout generation. A custom adjacency generator produced spatial configurations based on product categories, flow constraints, and context. NYC Open Data APIs were integrated to adapt layouts to urban conditions. Customer movement data and sales records informed spatial analytics, identifying hotspots and inefficiencies. Iterative simulations generated layout variations, evaluated through metrics like visibility, circulation, and product accessibility. Machine learning refined placement strategies using past performance. This integrated approach allowed BENTO to deliver intelligent, data-responsive retail layouts grounded in both design logic and operational performance.</p>
+                    </div>
+                </div>
+
+            <br>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Urban Computing</h3>
+                <p class="project-subtitle">Exploratory Research on Data Driven Urban Computational Design</p>
+                <p class="project-faculty">
+                    Project advisor_Luc Wilson, Meli Harvey
+                </p>
+                <div class="project-links">
+                    <a href="https://docs.google.com/presentation/d/1P7_f0Uam8va0bKMAUgwkwhVfTj9Jn8mX7Uihps3cbbA/edit" target="_blank" class="project-link">
+                        View Exploratory<span class="link-icon">→</span>  
+                    </a>
+                </div>
+                <div class="work-item-thumbnail">
+                    <div class="video-container">
+                        <img src="Data/Works/Computation/Sidewalk Reclamation Computing Natural Interventions/thumbnail.jpg" alt="Urban Computing Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/Sidewalk Reclamation Computing Natural Interventions/cover.gif" alt="Urban Computing GIF" class="project-gif">
+                    </div>
+                </div>
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
                         <div class="tags">
                             <span class="tag">Spatial Simulation</span>
                             <span class="tag">Computational Modeling</span>
@@ -570,23 +350,1207 @@
                             <span class="tag">Green Interventions</span>
                             <span class="tag">Pedestrian Walkability</span>
                         </div>
+                        <p class="project-description">Building upon the Urban Fringe project, Sidewalk Reclamation delves deeper into the spatial dynamics of sidewalk encroachment, focusing on radiation exposure and claustrophobic zones. By analyzing how environmental factors impact pedestrian experiences, the project identifies key areas where natural interventions, such as green buffers and shade structures, can mitigate heat and enhance walkability. Leveraging computational modeling, the project examines radiation patterns, sunlight distribution, and spatial compression across sidewalk zones. Data-driven simulations inform targeted design solutions, integrating natural elements to not only reduce heat exposure but also create more welcoming and accessible public pathways.</p>
                     </div>
-                    <div class="work-item-content-right">
-                        <p class="project-description">Building upon the Urban Fringe project, Sidewalk Reclamation delves deeper into the spatial dynamics of sidewalk encroachment, focusing on radiation exposure and claustrophobic zones. By analyzing how environmental factors impact pedestrian experiences, the project identifies key areas where natural interventions, such as green buffers and shade structures, can mitigate heat and enhance walkability.</p>
-                        <p class="project-description">Leveraging computational modeling, the project examines radiation patterns, sunlight distribution, and spatial compression across sidewalk zones. Data-driven simulations inform targeted design solutions, integrating natural elements to not only reduce heat exposure but also create more welcoming and accessible public pathways.
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Computational Modeling</span>
+                            <span class="tag">Environmental Simulation</span>
+                            <span class="tag">Data-Driven Design</span>
+                            <span class="tag">Radiation Analysis</span>
+                            <span class="tag">Green Infrastructure</span>
+                            <span class="tag">Walkability Assessment</span>
+                        </div>
+                        <p class="project-description">Urban Computing utilized computational modeling platforms to simulate environmental conditions and spatial dynamics along urban sidewalks. Radiation analysis tools were used to map sunlight exposure and identify heat-prone areas. Data-driven design methods integrated GIS datasets and pedestrian movement patterns to inform intervention strategies. Environmental simulation software tested the impact of proposed green infrastructure, such as shade trees and buffer zones, on microclimate and walkability. The workflow included iterative scenario modeling, performance evaluation, and visualization of spatial data. The process enabled evidence-based recommendations for improving pedestrian comfort, reducing heat, and enhancing the ecological quality of public pathways.</p>
+                    </div>
+                </div>
+
+
+            <br>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Hue Knew</h3>
+                <p class="project-subtitle">Interactive Film Recognition Game</p>
+                <p class="project-faculty">
+                    Project advisor_Jia Zhang
+                    <br>
+                    Collaborators_Hao Lee and Julia Kwon
+                </p>
+                <div class="project-links">
+                    <a href="https://halfward.github.io/DataViz-GroupProj/" target="_blank" class="project-link">
+                        View Quiz Game<span class="link-icon">→</span>  
+                    </a>
+                </div>
+                <div class="work-item-thumbnail">
+                    <div class="video-container">
+                        <img src="Data/Works/Computation/Hue knew/thumbnail.PNG" alt="Hue knew Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/Hue knew/cover.gif" alt="Hue knew GIF" class="project-gif">
+                    </div>
+                </div>
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Film Recognition</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Film Analysis</span>
+                            <span class="tag">User Experience</span>
+                            <span class="tag">Performance Analytics</span>      
+                        </div>
+                        <p class="project-description">Hue Knew is an interactive film recognition quiz that invites players to identify movies based on blurred visuals, including stills and posters. It challenges users to guess titles, genres, and release years, turning abstraction into insight. The game is powered by the TMDB API, offering a dynamic and constantly refreshed library of cinematic content. Beyond gameplay, Hue Knew features a performance dashboard that visualizes player accuracy, trends by genre, and recognition strengths. This transforms a simple quiz into an engaging cinematic exploration tool—blending entertainment, film literacy, and data analytics to uncover how we recognize and remember visual storytelling.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Game Design</span>
+                            <span class="tag">Performance Tracking</span>
+                            <span class="tag">User Analytics</span>      
+                        </div>
+                        <p class="project-description">The quiz was built using HTML, CSS, and JavaScript, with D3.js and Chart.js enabling real-time data visualization. The TMDB API provides up-to-date film assets like posters, release dates, and genres. Custom image processing creates blurred media for gameplay. The system tracks individual player performance, analyzing correct and incorrect responses across various dimensions. A responsive user interface ensures mobile compatibility, while performance metrics populate an interactive dashboard that visualizes user analytics. Data is used to adjust difficulty levels and provide genre-based learning insights. Hue Knew merges game mechanics with user data to enhance engagement and cinematic understanding.</p>
+                    </div>
+                </div>
+
+            <br>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Oblivian to Odyssey</h3>
+                <p class="project-subtitle">Understanding the disconnection between people and their urban surroundings</p>
+                <p class="project-faculty">Project advisor_Laura Kurgan and Snoweria Zhang</p>
+                <div class="project-links">
+                    <a href="https://gsapp-cdp.github.io/colloquium-2-2024/work/vaibhav/" target="_blank" class="project-link">
+                        View Research<span class="link-icon">→</span>  
+                    </a>
+                </div>
+                <div class="work-item-thumbnail">
+                    <div class="video-container">
+                        <img src="Data/Works/Computation/Oblivian to Odyssey/thumbnail.jpg" alt="Oblivian to Odyssey Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/Oblivian to Odyssey/cover.gif" alt="Oblivian to Odyssey GIF" class="project-gif">
+                    </div>
+                </div>
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Urban Engagement</span>
+                            <span class="tag">Commuter Experience</span>
+                            <span class="tag">Spatial Computing</span>
+                            <span class="tag">Gaze Patterns</span>
+                            <span class="tag">Interactive Exploration</span>
+                            <span class="tag">City-Driven Discovery</span>          
+                        </div>
+                        <p class="project-description">This research explores the growing disconnection between people and their urban environments, driven by gaze detachment, reduced interaction, and repetitive commuting patterns. Through mapping these behaviors in “Oblivion,” the project reveals how everyday journeys have become passive and disengaged. In contrast, “Odyssey” proposes a speculative reimagination of commutes as immersive explorations. By blending AI-driven personalization with spatial computing, it encourages users to engage more deeply with their surroundings. Streets become interactive landscapes—alive with curiosity, memory, and emotion—transforming routine travel into meaningful discovery. Oblivian to Odyssey invites a shift from unaware drifting to intentional, sensory-driven urban experiences.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Behavioral Research</span>
+                            <span class="tag">Gaze Tracking</span>
+                            <span class="tag">Spatial Computing</span>
+                            <span class="tag">Prototype Development</span>
+                            <span class="tag">User Testing</span>
+                            <span class="tag">Interactive Design</span>          
+                        </div>
+                        <p class="project-description">The study combined behavioral research and computational methods to analyze urban disengagement. Gaze-tracking devices recorded visual focus during commutes, while mobile apps gathered spatial and interaction data. Prototype development involved AR-based experiences that layered digital prompts across cityscapes. Spatial computing tools enabled contextual responses based on user movement and environment. User testing was conducted with diverse commuters to capture feedback on engagement, clarity, and interaction depth. Insights from these sessions refined design decisions and interaction strategies. This iterative approach, grounded in real-time data and user behavior, supported the creation of an adaptive, responsive commuting experience.
+
                         </p>
                     </div>
                 </div>
-            </div>
-            <br>
-            <hr>
-            <br>
 
+            <br>                       
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Gaze Tracker</h3>
+                <p class="project-subtitle">Mapping and Shaping Attention during OBLIVIAN</p>
+                <p class="project-faculty">
+                    Project advisor_Dan Taeyoung
+                </p>
+                <div class="project-links">
+                    <a href="https://0209vaibhav.github.io/Meta-Tool_INTERNAL/Vaibhav/Attentional%20Theory/index.html" target="_blank" class="project-link">
+                        View Article<span class="link-icon">→</span>  
+                    </a>
+                </div>
+                <div class="work-item-thumbnail">
+                    <div class="video-container">
+                        <img src="Data/Works/Computation/Gaze Tracker/thumbnail.jpg" alt="Gaze Tracker Cover" class="video-hover-cover">
+                        <img src="Data/Works/Computation/Gaze Tracker/cover.gif" alt="Gaze Tracker GIF" class="project-gif">
+                    </div>
+                </div>
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Attention Mapping</span>
+                            <span class="tag">Gaze Tracking</span>
+                            <span class="tag">Spatial Awareness</span>
+                            <span class="tag">Habit Reformation</span>
+                            <span class="tag">Urban Engagement</span>
+                            <span class="tag">Real-Time Feedback</span>      
+                        </div>
+                        <p class="project-description">Gaze Tracker addresses screen-induced disengagement during commutes by mapping visual attention across a 3x3 grid. By tracking head position and time spent in each gaze zone, it reveals unconscious habits like persistent downward gazing. The system provides real-time nudges to shift attention outward, reframing the commute as an opportunity for urban engagement. Instead of letting attention drift, Gaze Tracker invites users to reconnect with their surroundings. It transforms passive routines into active awareness, emphasizing that attention is both a trainable habit and a tool for urban discovery—encouraging users to look up, observe, and experience the city intentionally.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Real-Time Tracking</span>
+                            <span class="tag">Mobile Development</span>
+                            <span class="tag">Behavioral Analysis</span>
+                            <span class="tag">Notification Systems</span>
+                            <span class="tag">Data Collection</span>      
+                        </div>
+                        <p class="project-description">Gaze Tracker uses computer vision to detect head position and gaze direction via mobile cameras. A 3x3 visual grid categorizes focus zones in real time, while optimized algorithms ensure smooth mobile performance. Notifications gently prompt users to redirect gaze when prolonged downward focus is detected. The app logs attention data, providing users with feedback on their visual habits. Behavioral analytics track long-term patterns, encouraging awareness shifts over time. All components are designed for minimal intrusiveness and energy use, combining spatial sensing with meaningful interaction. The result is a mobile system that subtly reshapes how users engage with the city around them.</p>
+                    </div>
+                </div>    
+        </section>
+        
+        <section id="architecture" class="scroll-section">
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Familial Housing</h3>
+                <p class="project-subtitle">Scrutinization of the FAMILIAL sensitivity in Mumbai</p>
+                <p class="project-faculty">
+                    Studio_Dissertation_sem IX-X 
+                    <br>
+                    Mentors_Rohan Shivkumar and Vikram Powar
+                    <br>
+                    Type_User Participatory Housing
+                    <br>
+                    Location_Worli, Mumbai, India
+                    <br>
+                    Year_2021-2022
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-familial" src="Data/Works/Architecture/Familial Housing/cover.png" alt="Familial Housing Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Familial Fragility in Redevelopment</span>
+                            <span class="tag">Postulation of the Familial</span>
+                            <span class="tag">User Participatory Housing</span>
+                            <span class="tag">Cohesive community living</span>
+                            <span class="tag">Fictive kinship as Strategy</span>
+                            <span class="tag">Rethinking Familial Urbanism</span>
+                        </div>
+                        <p class="project-description">The project reclaims the disappearing familial fabric within Mumbai's housing culture by challenging the limitations of current redevelopment models. Grounded in the emotional, social, and cultural dynamics of communal living, it explores how architecture can restore kinship, shared routines, and spatial bonding. By understanding familial structures not just as units but as social ecosystems, the proposal reframes housing beyond metrics of density and economy. It introduces a bottom-up housing allocation model—"Form Follows Preference"—allowing residents to co-author their living conditions. This vision integrates modularity, adaptability, and collective identity to redefine housing as a framework of belonging, not just built form.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Housing Pattern Mapping</span>
+                            <span class="tag">Modular Typology Derivation</span>
+                            <span class="tag">User Preference-based Allocation</span>
+                            <span class="tag">BIM-based workflow</span>
+                            <span class="tag">Algorithmic Massing Studies</span>
+                            <span class="tag">Narratives to pattern language</span>
+                        </div>
+                        <p class="project-description"> The methodology begins with multi-scalar site studies, field research, pattern language generation, and vulnerability mapping across four typologies. BDD Chawls was chosen due to high susceptibility to insensitive redevelopment. The process included household interviews, socio-spatial analysis, site documentation, and critical review of state-led schemes. Form generation evolved from analog sketching to algorithmic modeling using Rhino and Grasshopper for geometry and preference-based permutations. Revit and BIM workflows structured the detailing across masterplan, building, and unit scales. A new allocation model was developed using customizable prefab housing modules, integrated with social, structural, and behavioral parameters to ensure participatory and culturally sensitive outcomes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">High Performance Center</h3>
+                <p class="project-subtitle">By Chennai Super Kings from Indian Premier League</p>
+                <p class="project-faculty">
+                    <br>
+                    Sameep Padora and Associates(sP+a)
+                    <br>
+                    Type_Recreation, Hospitality and Sports
+                    <br>
+                    Status_Under Construction
+                    <br>
+                    Location_Chennai, India
+                    <br>
+                    Year_2022-2024
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-hpc" src="Data/Works/Architecture/High Performance Center/cover.png" alt="High Performance Center Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Monumental Public Architecture</span>
+                            <span class="tag">Terraced Massing</span>
+                            <span class="tag">Sports Infrastructure</span>
+                            <span class="tag">Dynamic Movement Expression</span>
+                            <span class="tag">Ramp-Driven Circulation</span>
+                            <span class="tag">Spatial Spectatorship</span>
+                        </div>
+                        <p class="project-description">The High Performance Center for Chennai Super Kings is designed as a cohesive sports facility wrapped around a central cricket ground. The concept stems from three arms enclosing the field—each designated for different programmatic needs like team spaces, sports courts, and F&B. A continuous ramp winds through the form, creating a dynamic relationship between movement, form, and spectatorship. The architecture seeks to blend structure, circulation, and function to craft a spatial identity that's athletic yet civic. The undulating bands wrapping the mass are not just aesthetic—they embed light, movement, and program, turning the building into a symbol of sporting dynamism.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Facade Optimization Techniques</span>
+                            <span class="tag">Program–Form Mapping</span>
+                            <span class="tag">Parametric Ramp Modeling</span>
+                            <span class="tag">Rhino + Grasshopper Workflows</span>
+                            <span class="tag">Multi-Scale Spatial Resolution</span>
+                            <span class="tag">Iterative Design Prototyping</span>
+                        </div>
+                        <p class="project-description">The process began with site and context analysis to place the built mass around the cricket ground. Program zones were mapped into the three arms. Using Rhino and Grasshopper, a parametric system was developed to explore ramp configurations, aligning with height, circulation, and room dimensions. Terracing and sectional fluidity were iteratively tested through both plan and 3D model. Hundreds of ramp and façade variations were prototyped to refine material, structure, and light behaviour. Spatial continuity between inside and out was key—final designs balanced technical constraints with design intent, ensuring seamless transitions, visual hierarchy, and a powerful architectural identity rooted in motion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">In transit Hub</h3>
+                <p class="project-subtitle">Reinvigorating short term housing</p>
+                <p class="project-faculty">
+                    <br>
+                    Studio_Architecture Design_sem VII
+                    <br>
+                    Mentors_Kalpit and Mayuri
+                    <br>
+                    Location_Vile Parle, Mumbai, India
+                    <br>
+                    Type_Temporary Housing 
+                    <br>
+                    Year_2020
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-transit" src="Data/Works/Architecture/In transit Hub/cover.png" alt="In transit Hub Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Spatial Identity through Typologies</span>
+                            <span class="tag">Inclusive Urban Living</span>
+                            <span class="tag">Public-Private Interplay</span>
+                            <span class="tag">User-Specific Spatial Narratives</span>
+                            <span class="tag">Adaptive Housing Ecosystem</span>
+                            <span class="tag">Transit-Oriented Community</span>
+                        </div>
+                        <p class="project-description">The IN TRANSIT HUB rethinks short-term housing as a responsive, layered typology for diverse urban dwellers—transit passengers, air crew, short-stay families, and temporary workers. Set within Mumbai's airport colony, the project introduces housing as infrastructure, integrating movement, rest, and social interaction. A continuous ramp system connects elevated dwelling blocks with shared amenities, activating public courtyards and urban edges. Through spatial variation in typology, scale, and façade, the project humanizes the experience of temporary stay. It merges metro access, cultural zones, and living pods into an adaptive housing ecosystem that prioritizes inclusivity, dignity, and urban belonging for a transient population.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Visual and Data-Driven Planning</span>
+                            <span class="tag">Contextual Site Analysis</span>
+                            <span class="tag">Ground Plane Optimization</span>
+                            <span class="tag">Iterative Massing Development</span>
+                            <span class="tag">Ethnographic User Research</span>
+                            <span class="tag">Target Group Segmentation</span>
+                        </div>
+                        <p class="project-description">The design process began with an in-depth study of existing site conditions—housing typologies, spatial morphology, daily routines, and lived patterns. This contextual understanding shaped the framing of the core intervention problem. The master site was then analyzed to extract an intervention zone tailored for four distinct target groups. Programmatic zoning followed, organizing public spaces and ground-level interactions. Massing strategies were developed based on occupancy data and temporal usage. Each user group's needs were mapped to craft individualized housing typologies. The final resolution emerged through iterative testing—using mapping, modeling, and spatial simulations—to achieve a sensitive, inclusive housing ecosystem.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Administration Building</h3>
+                <p class="project-subtitle">Dalmia Polypro PET Recycling Plant Corporate Office</p>
+                <p class="project-faculty">Collaborators_Sameep Padora and Associates (sP+a)
+                    <br>
+                    Type_Corporate Office
+                    <br>
+                    Status_Under Construction
+                    <br>
+                    Location_Nashik, India
+                    <br>
+                    Year_2022-2024
+                </p>
+
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image" src="Data/Works/Architecture/Administration building/cover.png" alt="Project Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Spatial Porosity & Visual Connectivity</span>
+                            <span class="tag">Corbeled Brick Facade</span>
+                            <span class="tag">Contextual Modernism</span>
+                            <span class="tag">Inward-Looking Courtyard Typology</span>
+                            <span class="tag">Rethinking Corporate Spaces</span>
+                            <span class="tag">Cascading Stepped Terraces</span>
+                        </div>
+                        <p class="project-description">The Administration Building redefines corporate spatial identity within an industrial context. Designed for Dalmia Polypro PET Recycling Plant, it introduces a courtyard centered layout with stepped terraces that enhance light, ventilation, and interaction. The project departs from enclosed office blocks by creating visual and spatial openness through inward-facing programs. Its locally sourced, computationally crafted brick façade integrates insulation, ventilation, and identity, resulting in a monolithic yet human-scaled presence. The building becomes a functional oasis within the factory campus—bridging utility and expression—while positioning sustainability, contextual sensitivity, and corporate comfort as equal architectural priorities.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Facade composition and Optimization</span>
+                            <span class="tag">Data-Driven Detailing</span>
+                            <span class="tag">Grasshopper Workflow</span>
+                            <span class="tag">Parametric Brick Modulation</span>
+                            <span class="tag">Corbeled Brick Prototyping</span>
+                            <span class="tag">Algorithmic Form-Finding</span>
+                        </div>
+                        <p class="project-description">The design process began with spatial zoning based on programmatic needs within a tight 25m x 30m site. Using Rhino and Grasshopper, the team iteratively modelled massing blocks and explored program stacking, façade modulation, and corbel profiles. Parametric workflows were employed to generate responsive façade geometries that adapt to room types and orientations. Each opening, corbel, and terrace was computationally derived to optimize daylighting, ventilation, and visual connections. Construction drawings were meticulously detailed to translate algorithmic logic into brick modules. The final outcome balances computational precision with vernacular expression, allowing the building to be both digitally conceived and contextually grounded.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Multi-Functional Entrance block</h3>
+                <p class="project-subtitle">Dalmia Polypro PET Recycling Plant</p>
+                <p class="project-faculty">Sameep Padora and Associates(sP+a)
+                    <br>
+                    Type_Support Infrastructure
+                    <br>
+                    Status_Under Construction
+                    <br>
+                    Location_Nashik,India
+                    <br>
+                    Year_2022-2024
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-multifunc" src="Data/Works/Architecture/Multi-Functional Entrance block/cover.png" alt="Multi-Functional Entrance block Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Passive Daylighting Strategy</span>
+                            <span class="tag">Inverted Arched Geometry</span>
+                            <span class="tag">Alternating Solid-Void Composition</span>
+                            <span class="tag">Stone Framed Spatiality</span>
+                            <span class="tag">Context-Blending Form</span>
+                            <span class="tag">Programmatic Courtyard Rhythm</span>
+                        </div>
+                        <p class="project-description">The entrance block at the Dalmia Polypro PET Recycling Plant is conceived as a seamless extension of the boundary wall—rising gently into a dynamic, thin arched roof that defines arrival. Strategically placed programs like security, guest waiting, health center, and crèche alternate with green courtyards, creating moments of pause, ventilation, and daylight. These voids not only improve thermal comfort but also encourage interaction and visual permeability. The design responds to its industrial context with a rugged material palette and minimal visibility from the street while expressing lightness and softness within, setting a sensitive threshold for both workers and visitors.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Arched Roof Geometry Optimization</span>
+                            <span class="tag">Stone Masonry Detailing</span>
+                            <span class="tag">Light & Ventilation Funnel</span>
+                            <span class="tag">Light & Shadow Section Studies</span>
+                            <span class="tag">Modular Courtyard Insertions</span>
+                            <span class="tag">Sequential Spatial Narratives</span>
+                        </div>
+                        <p class="project-description">The process began with contextual analysis to understand how the boundary wall and adjacent road network defined the site's edge. Spatial planning evolved through sectional studies and 3D modelling in Rhino, focusing on inserting courtyards between function-specific blocks. Load-bearing masonry walls and light roof sections were optimized for daylight using splayed opening simulations. Passive cooling, material tactility, and seamless circulation were key drivers. Grasshopper was used to refine arch geometries and window splay angles, ensuring natural light without compromising privacy. Each decision was grounded in the material character of stone, brick, and steel—balancing robustness with spatial delicacy.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Eating Space</h3>
+                <p class="project-subtitle">Dalmia Polypro PET Recycling Plant</p>
+                <p class="project-faculty">Sameep Padora and Associates(sP+a)
+                    <br>
+                    Type_Collective F & B
+                    <br>
+                    Status_Under Construction
+                    <br>
+                    Location_Nashik, India
+                    <br>
+                    Year_2022-2024
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-eating" src="Data/Works/Architecture/Eating space/cover.png" alt="Eating Space Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Industrial Context Integration</span>
+                            <span class="tag">Visual Privacy & Porosity</span>
+                            <span class="tag">Street-Inspired Circulation</span>
+                            <span class="tag">Monolithic Exterior Language</span>
+                            <span class="tag">Inward-Looking Architecture</span>
+                            <span class="tag">Light-Driven Spatial Design</span>
+                        </div>
+                        <p class="project-description">Designed as an architectural quiet in the noise of an industrial landscape, the canteen block navigates between contextual subtlety and spatial richness. Surrounded by factory sheds and located at a vehicular junction, the intervention avoids visual confrontation by adopting a low-key, monolithic exterior while opening internally to light, ventilation, and social exchange. Carved niches, skewed apertures, and skylit wells shape an inward-looking experience. This threshold between outdoors and indoors becomes a soft space for pause, community, and nourishment—filtered from the harshness of the surrounding powerplant but still very much grounded in its reality.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Light & Ventilation Funnel Modeling</span>
+                            <span class="tag">User Flow Mapping</span>
+                            <span class="tag">Program-Form Zoning</span>
+                            <span class="tag">Circulation-as-Geometry Strategy</span>
+                            <span class="tag">Privacy-Oriented Opening Logic</span>
+                            <span class="tag">Facade Composition</span>
+                        </div>
+                        <p class="project-description">The design process began with detailed site analysis and program distribution across distinct user groups—workers and professionals—followed by zoning of seating and utility blocks. Rhino was used extensively to explore formal massing, test light wells, simulate skylight performance, and resolve curvature-based transitions. Circulation was mapped as an urban street flowing indoors, expressed through paving continuity and controlled openings. Skewed apertures and carved voids were modeled parametrically to optimize daylight and airflow while preserving visual privacy. Material and form were calibrated to offer spatial intimacy within a low-rise industrial fabric, balancing subtle visibility with internal spatial generosity.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Discrete Construction</h3>
+                <p class="project-subtitle">Modular Structural System in Family-Specific Customizable Housing</p>
+                <p class="project-faculty">
+                    Studio_Construction Technology_sem IX
+                    <br>
+                    Mentors_Ainsley Lewis
+                    <br>
+                    Type_User Participatory Housing 
+                    <br>
+                    Year_2021
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-discrete" src="Data/Works/Architecture/Discrete Construction/cover.png" alt="Discrete Construction Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Discrete Construction Logic</span>
+                            <span class="tag">Micro-Unit Flexibility</span>
+                            <span class="tag">Modular Architecture</span>
+                            <span class="tag">Participatory Architecture</span>
+                            <span class="tag">Kit-of-Parts Architecture</span>
+                            <span class="tag">Housing Personalization</span>
+                        </div>
+                        <p class="project-description">This project proposes a modular housing system grounded in discrete construction logic, where users actively shape their homes by assembling prefabricated components. A micro-grid layout enables adaptability, allowing families to customize spatial arrangements based on their evolving needs, lifestyles, and household size. The system is democratic and participatory—responding to both physical constraints and personal desires. Rather than adapting to a pre-designed house, the house adapts to the user. By empowering inhabitants with spatial agency, the model offers a sustainable and scalable strategy for family-specific, community-driven housing that remains open-ended and expandable across time.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Housing Typology Prototyping</span>
+                            <span class="tag">3D Grid Structuring</span>
+                            <span class="tag">Modular Joinery Design</span>
+                            <span class="tag">Assembly Sequence Mapping</span>
+                            <span class="tag">Micro-grid Spatial Framework</span>
+                            <span class="tag">Modular Grammar Creation</span>
+                        </div>
+                        <p class="project-description">The process began with iterative component development using 3D modeling tools to identify structurally stable and transformable modules. A T-shaped discrete unit was optimized for stacking, rotation, and spatial flexibility. Grasshopper was used for parametric customization, Rhino for 3D documentation, and rendering tools for joinery visualization. Modules were tested for compatibility, orientation, and wall-to-wall connection logic. Fenestration systems, ventilation devices, and privacy screens were designed as interchangeable structural inserts. The workflow emphasized precision, modular logic, joinery design, and community adaptability—making the entire construction system replicable, easy to assemble, and cost-efficient for participatory housing solutions.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Lokal Parklet</h3>
+                <p class="project-subtitle">An Outdoor Restaurant Extension Framing Skyline and Shade</p>
+                <p class="project-faculty">
+                    <br>
+                    Collaborators_Abraham John architects
+                    <br>
+                    Type_Outdoor Restaurant
+                    <br>
+                    Location_New Jersey,USA
+                    <br>
+                    Year_2020
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-lokal" src="Data/Works/Architecture/Lokal Parklet/cover.png" alt="Lokal Parklet Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Skyline-facing pavilion</span>
+                            <span class="tag">Wooden monolithic mass</span>
+                            <span class="tag">Classic-to-modern dynamic form</span>
+                            <span class="tag">Filtered light</span>
+                            <span class="tag">Waterfront dining</span>
+                            <span class="tag">Parametric wooden structure</span>
+                        </div>
+                        <p class="project-description">Lokal Parklet is an outdoor dining extension designed for a restaurant located along the Hudson River, with an open view of the New York City skyline. The design reimagines a classic gable roof form—distorted as if shaped by wind and context—to create a dynamic, asymmetrical timber canopy. This intervention transforms a small parking bay into a shaded pavilion that filters light, preserves views, and evokes a modern yet nostalgic identity. Alternating wooden box sections generate transparency, ventilation, and visual rhythm, while the LOKAL cut-out at the front frames its identity. It's a warm blend of craft, geometry, and contextual storytelling.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Sunlight and ventilation simulation</span>
+                            <span class="tag">Structural wood joinery</span>
+                            <span class="tag">Shadow behavior analysis</span>
+                            <span class="tag">Site-responsive form development</span>
+                            <span class="tag">Modular assembly techniques</span>
+                            <span class="tag">Parametric modeling (Rhino)</span>
+                        </div>
+                        <p class="project-description">The parklet structure was developed through parametric modeling in Rhino, allowing us to manipulate a traditional roof form into a dynamic, site-responsive pavilion. We studied solar angles and shadow behavior to optimize filtered light and natural ventilation through alternating wooden members. The form was crafted for modular fabrication, using structural wood joinery to create a monolithic assembly. The open skeletal framework not only offers visual permeability but also frames the New York skyline from every seat. The design blends digital form-finding with tactile material expression to create a contextual yet iconic urban intervention.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">House of Warp & Weft</h3>
+                <p class="project-subtitle">Reimagining Tradition through Recreation, Learning & Living in Kohima</p>
+                <p class="project-faculty">
+                    <br>
+                    Studio_Architecture Design_sem VI
+                    <br>
+                    Mentors_ Jude D'souza, Vandana Ranjitsinh
+                    <br>
+                    Location_Kohima, Nagaland, India
+                    <br>
+                    Type_Cultural, Recreational, Leisure and Housing
+                    <br>
+                    Year_2019-2020
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-warpweft" src="Data/Works/Architecture/House of Warp & Weft/cover.png" alt="House of Warp & Weft Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Play & Productivity</span>
+                            <span class="tag">Sectional Sandwich of Terrain & Canopy</span>
+                            <span class="tag">Architecture as Community Bridge</span>
+                            <span class="tag">Youth-Centric Public Space</span>
+                            <span class="tag">Cultural Revival through Design</span>
+                            <span class="tag">Traditional Meets Parametric</span>
+                        </div>
+                        <p class="project-description">Set in Kohima's T-Khel region, this youth-centric intervention blends recreation, culture, and living into one cohesive experience. Responding to the site's educational surroundings, the program includes food zones, learning pods, gaming areas, and dormitories. Each space is connected under a lightweight timber-steel roof that warps to create spatial variation. Inspired by traditional materials and community life, the project fuses local craft with contemporary geometry. The architecture becomes a space between cheer and calm, enabling spontaneous interaction, cultural continuity, and social belonging through playful form and rooted material expression.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Parametric Geometry design</span>
+                            <span class="tag">Programmatic Massing</span>
+                            <span class="tag">Grasshopper Scripting roof generation</span>
+                            <span class="tag">3D Terrain Mapping</span>
+                            <span class="tag">Roof-Program Integration</span>
+                            <span class="tag">Spatial-Structural Fusion</span>
+                        </div>
+                        <p class="project-description">The design process began with precise 3D terrain modelling to accommodate split-level massing across the site's organic slope. Programmatic blocks were spatially arranged to respond to views, movement, and social overlap. Parametric elements—including bamboo screens, brick perforated walls, and pod facades—were scripted using Grasshopper to achieve optimized, culturally grounded geometries. The warping roof, generated through algorithmic design, stitched together all zones under one expressive form. It not only unified the blocks visually but also responded to each function, creating varying heights, light conditions, and spatial dynamics that enhanced the identity and experiential quality of the intervention.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Objects.Institutions.Identities</h3>
+                <p class="project-subtitle">Kohima study trip documentation</p>
+                <p class="project-faculty">
+                    <br>
+                    Studio_Architecture design_sem VI
+                    <br>
+                    Type_Narrative Mapping
+                    <br>
+                    Year_2019-2020
+                    <br>
+                    Location_Kohima, Nagaland, India,
+                    <br>
+                    Collaborators_class of 2022
+                    <br>
+                    Group Member_Nikita Taori and Ravishta Gupta
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-objects" src="Data/Works/Architecture/Objects.Institutions.Identities/cover.png" alt="Objects.Institutions.Identities Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Object-Based Ethnography</span>
+                            <span class="tag">Spatial Anthropology</span>
+                            <span class="tag">Khel-Based Community Mapping</span>
+                            <span class="tag">Cultural Narratives</span>
+                            <span class="tag">Institutional Memory</span>
+                            <span class="tag">Identity Through Artifacts</span>
+                        </div>
+                        <p class="project-description">This documentation project explores the interrelationship between everyday objects, cultural institutions, and identity formation within Kohima Village, Nagaland. Divided into four traditional communities called Khels, the village reveals its heritage through seemingly mundane artifacts present in households. Each student group studied one Khel, tracing objects across domestic and community spaces to uncover their material histories, ritual uses, and symbolic meanings. These artifacts—whether ceremonial, utilitarian, or crafted—became entry points into understanding the institutional structures and evolving narratives of Kohima. Through observation, interviews, and spatial mapping, the study builds a layered portrait of how identities are sustained and transformed through objects in space.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Object Trajectory Mapping</span>
+                            <span class="tag">Ethnographic Fieldwork</span>
+                            <span class="tag">Institutional Analysis</span>
+                            <span class="tag">Measured Drawings to 3D Models</span>
+                            <span class="tag">Interviews and conversations</span>
+                            <span class="tag">Spatial Documentation</span>
+                        </div>
+                        <p class="project-description">The research process was rooted in immersive fieldwork during a studio-led trip to Kohima. Students engaged in object-based mapping, selecting everyday or ceremonial items from village homes and tracing their life cycles—how they are made, used, stored, and remembered. These object trajectories revealed networks of institutions—family, religion, craft, and governance. Tools included spatial mapping at multiple geographic scales, ethnographic interviews, typological diagrams, and narrative sketches. A sequence of diagrams was created to trace the village's location and internal divisions (Khels), document the chosen objects, and visualize the institutions and practices they connect to, offering a spatialized anthropology of material identity.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Vertical Village</h3>
+                <p class="project-subtitle">Exploring the Realm of Urban Rurality Housing</p>
+                <p class="project-faculty">
+                    <br>
+                    Studio_Integrated design studio_sem VII 
+                    <br>
+                    Mentors_Quaid and Shrey
+                    <br>
+                    Type_Housing
+                    <br>
+                    Year_ 2020
+                    <br>
+                    Location_Goregaon, India
+                    <br>
+                    Collaborators_Rhea Patil, Prakrut Shah, Drashti Shroff and Nikhita Hadnoorkar
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-vertical" src="Data/Works/Architecture/Vertical Village/cover.png" alt="Vertical Village Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Urban Self-Sufficiency</span>
+                            <span class="tag">Disintegrated massing</span>
+                            <span class="tag">Social Cohesion in Housing</span>
+                            <span class="tag">Spatial Porosity</span>
+                            <span class="tag">Urban-Rural Synergy</span>
+                            <span class="tag">Vernacular Reimagined</span>
+                        </div>
+                        <p class="project-description">The project reinterprets the notion of a "Vertical Village" to address the housing crisis in Mumbai while preserving the values of rural living. Instead of typical repetitive towers, the design explores staggering, terracing, and spatial porosity to replicate the interactive and clustered nature of village life. Inspired by rural homes and courtyards, the architecture encourages community interaction, cross-ventilation, and personal outdoor space at vertical heights. This approach blends the intimacy of ground-level village dynamics with the efficiency of vertical construction, creating a socially sustainable and context-sensitive housing model that balances density, diversity, and a sense of belonging.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Daylight & Ventilation Analysis</span>
+                            <span class="tag">Typology Iteration</span>
+                            <span class="tag">Mass-Void Modeling</span>
+                            <span class="tag">Climatic Form Optimization</span>
+                            <span class="tag">Responsive Facade Design</span>
+                            <span class="tag">Spatial Network Diagrams</span>
+                        </div>
+                        <p class="project-description">A modular design framework guided the formation of ten housing typologies, distributed across a staggered massing system. Computational tools such as Rhino and Grasshopper were used to explore solar studies, natural ventilation, and massing strategies. Parametric iterations helped test visual and climatic performance while optimizing daylight and airflow through internal courtyards and stepped terraces. Detailed spatial diagrams and sectional studies enabled mapping of public-private transitions, shared corridors, and structural grids. These tools, coupled with climate-responsive thinking and participatory housing principles, enabled the project to merge architectural logic with ecological comfort and social coherence at the scale of a vertical community.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Membrum Vestigial</h3>
+                <p class="project-subtitle">Karigari Workers Co-op Association</p>
+                <p class="project-faculty">
+                    <br>
+                    Studio_Architecture Design_sem V
+                    <br>
+                    Mentors_Apurva Parekh,Sandeep Menon
+                    <br>
+                    Studio_Working Drawing-sem VI
+                    <br>
+                    Mentors_Sandhya
+                    <br>
+                    Location_Mumbra, Mumbai, India
+                    <br>
+                    Type_Institution
+                    <br>
+                    Year_ 2020
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-membrum" src="Data/Works/Architecture/Membrum Vestigial/cover.png" alt="Membrum Vestigial Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Social Resilience</span>
+                            <span class="tag">Worker-Centered Cooperative</span>
+                            <span class="tag">Revival of Disappearing Craft Cultures</span>
+                            <span class="tag">Spatial Identity</span>
+                            <span class="tag">Urban Marginality</span>
+                            <span class="tag">Post-Industrial Urbanism</span>
+                        </div>
+                        <p class="project-description">Membrum Vestigial responds to the fading traces of Mumbra's once-vibrant craft culture—particularly the embroidery and pleating traditions now pushed to the margins. The project is a spatial protest and a revival strategy, reflecting on the slow disappearance of artisanship due to urban pressures, loss of livelihood, and policy neglect. Through an architectural cooperative, the project offers dignity, visibility, and ownership to craftspeople. Designed as a hybrid of production, learning, and gathering, it sustains the workers' agency and builds resilience. The brutalist roof form embodies their strength, while open studio typologies echo the informal yet rigorous nature of their practice.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Process Tracing of Craft Production</span>
+                            <span class="tag">Community Mapping</span>
+                            <span class="tag">Long-Span Structural Design</span>
+                            <span class="tag">Typology Reinterpretation</span>
+                            <span class="tag">Programmatic Zoning</span>
+                            <span class="tag">Folded Plate Form Exploration</span>
+                        </div>
+                        <p class="project-description">The project employed precise architectural documentation of eight significant structures within Sidhpur's old city. Each team recorded spatial and structural details—floor plans, ceiling plans, sections, and 3D isometric drawings. Careful attention was paid to joinery techniques, material articulation, façade language, and contextual relationships with adjacent buildings. Street elevations captured the urban rhythm and transitions across typologies. Students also mapped the city's historical development to situate each structure within a broader temporal and urban narrative. The resulting work blends architectural accuracy with anthropological sensitivity—creating a comprehensive visual archive of a town shaped by time, trade, and cultural convergence.</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Bari in Coexistence</h3>
+                <p class="project-subtitle">Rehabilitation for the Sundarbans houses</p>
+                <p class="project-faculty">
+                    <br>
+                    Competition_Sundar Bari by SEARCH
+                    <br>
+                    Collaborators_Kavya Shah and Priya Bhatki
+                    <br>
+                    Type_Low cost, flood resistant Housing
+                    <br>
+                    Location_Sundarbans, West Bengal, India
+                    <br>
+                    Year_2020
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-bari" src="Data/Works/Architecture/Bari in Coexistence/cover.png" alt="Bari in Coexistence Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Adaptive Living</span>
+                            <span class="tag">Post-Disaster Rehabilitation</span>
+                            <span class="tag">Contextual Design Strategy</span>
+                            <span class="tag">Climate Resilience</span>
+                            <span class="tag">Floating Architecture</span>
+                            <span class="tag">Rural Community Housing</span>
+                        </div>
+                        <p class="project-description">Bari in Coexistence proposes a resilient housing module for the flood-prone Sundarbans, grounded in the philosophy of coexisting with nature rather than resisting it. The dwelling's conical roof and buoyant bamboo base are designed to adapt to rising water levels, enabling vertical displacement during floods. Organized into two blocks—work and living—the modular system supports flexible expansion. The structure integrates local and recycled materials like bamboo, rattan, golpatta leaves, and plastic barrels, combining traditional knowledge with climatic responsiveness. This hybrid system ensures not only structural stability but also social sustainability through communal courtyards, adaptable interiors, and resource-sharing spaces.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Buoyant Foundation Engineering</span>
+                            <span class="tag">Local Material Assembly</span>
+                            <span class="tag">Modular Spatial Planning</span>
+                            <span class="tag">Community-Centric Prototyping</span>
+                            <span class="tag">Structural Behavior Simulation</span>
+                            <span class="tag">Climatic Performance Testing</span>
+                        </div>
+                        <p class="project-description">The design was developed through site-responsive analysis and technical prototyping for floating resilience. Calculations of live, dead, and environmental loads informed the use of 88 airtight 200-liter plastic barrels beneath the bamboo raft foundation, enabling safe vertical lift. The form draws from radial geometry, distributing wind loads and facilitating airflow. CAD modeling, iterative sectional studies, and environmental simulation tools were employed to test light, ventilation, and buoyancy. Local construction techniques were integrated using sustainable materials, while flexible programming enabled a dual-block layout for domestic and productive functions—linked by circulation paths that encourage daily interaction and community cohesion.</p>                   </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Sangam Gully</h3>
+                <p class="project-subtitle">Using the OLD to create NEW</p>
+                <p class="project-faculty">
+                    <br>
+                    Studio_Architecture Design_sem IV
+                    <br>
+                    Mentors_Advait Potnis
+                    <br>
+                    Location_Sidhpur, Gujarat, India
+                    <br>
+                    Type_ Community Housing 
+                    <br>
+                    Year_2019
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-sangam" src="Data/Works/Architecture/Sangam Gully/cover.png" alt="Sangam Gully Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Urban Cultural Regeneration</span>
+                            <span class="tag">Heritage-Sensitive Housing</span>
+                            <span class="tag">Social Reconnection through Space</span>
+                            <span class="tag">Old–New Fusion</span>
+                            <span class="tag">Pol Morphology Revival</span>
+                            <span class="tag">Community-Based Urbanism</span>
+                        </div>
+                        <p class="project-description">Sangam Gully reimagines Sidhpur's Lal Doshini Pol, where migration and shifting lifestyles have fractured once-vibrant communal ties. The project proposes an architectural intervention that reconnects fragmented pols by reviving cultural practices and reinterpreting traditional forms. 'Sangam'—meaning union—guides the concept: blending the social spirit of shared Bohra meals, the gully as connective tissue, and adaptive reuse of vernacular roof patterns and brick facades. Rather than imposing blocks, the design begins with the roof, allowing spatial play and cultural continuity. The result is a woven network of old and new, spatially and socially stitching the past into the present.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Spatial Insertion Techniques</span>
+                            <span class="tag">Gully Morphology</span>
+                            <span class="tag">Contextual Analysis</span>
+                            <span class="tag">Roof-First Design Strategy</span>
+                            <span class="tag">Figure-Ground Mapping</span>
+                            <span class="tag">Urban Section Studies</span>
+                        </div>
+                        <p class="project-description">The project adopts a roof-centric design process, beginning with traditional roofing geometries to shape space from the top down. Using figure-ground mapping, the intervention identifies disconnections between adjacent pols and proposes spatial stitching through gully continuity. Intrusion–extrusion operations reinterpret dead facades, transforming them into active social spaces. Otlas and shaded walkways extend the communal spirit, while lifted structures reinstate public passage. Contextual analysis of materiality, typology, and circulation patterns informed the integration of modern design without losing cultural essence. Tools like section studies and physical models helped translate the gully's social rhythm into built form.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Fragments of Sidhpur History</h3>
+                <p class="project-subtitle">Sidhpur study trip documentation</p>
+                <p class="project-faculty">
+                    Studio_Architecture design_sem IV
+                    <br>
+                    Type_Measure Drawing documentation
+                    <br>
+                    Year_2019
+                    <br>
+                    Location_Sidhpur, Gujarat, India
+                    <br>
+                    Collaborators_class of 2017
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-sidhpur" src="Data/Works/Architecture/Fragments of Sidhpur History/cover.png" alt="Fragments of Sidhpur History Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Contextual evolution and Identity</span>
+                            <span class="tag">Bohri Architecture</span>
+                            <span class="tag">Vernacular Urbanism</span>
+                            <span class="tag">Hybrid Architectural Typologies</span>
+                            <span class="tag">Spatial Continuity & Change</span>
+                            <span class="tag">Morphology of Settlements</span>
+                        </div>
+                        <p class="project-description">The study explores the architectural evolution of Sidhpur by dissecting eight unique sites within its old city fabric. Through historical timelines and typological analysis, students uncovered how trade, migration, and religious identity shaped a distinct built language—merging local craftsmanship with colonial influences. Each structure selected reflects a microcosm of Sidhpur's layered past, from narrow pols to merchant mansions. The project goes beyond façade aesthetics to examine how materiality, construction logic, and context inform spatial narratives. This deep-dive into vernacular hybridity helps trace not only architectural shifts, but also the socio-cultural currents embedded in the very bones of the town.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Facade & Street-scape Documentation</span>
+                            <span class="tag">Timeline Mapping</span>
+                            <span class="tag">Urban Sectional Analysis</span>
+                            <span class="tag">Spatial & Typological Analysis</span>
+                            <span class="tag">On-Site Measured Drawings</span>
+                            <span class="tag">Joinery & Material Studies</span>
+                        </div>
+                        <p class="project-description">The project employed precise architectural documentation of eight significant structures within Sidhpur's old city. Each team recorded spatial and structural details—floor plans, ceiling plans, sections, and 3D isometric drawings. Careful attention was paid to joinery techniques, material articulation, façade language, and contextual relationships with adjacent buildings. Street elevations captured the urban rhythm and transitions across typologies. Students also mapped the city's historical development to situate each structure within a broader temporal and urban narrative. The resulting work blends architectural accuracy with anthropological sensitivity—creating a comprehensive visual archive of a town shaped by time, trade, and cultural convergence.
+                    </div>
+                </div>
+            </div>
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Fly-Man-Go</h3>
+                <p class="project-subtitle">Trail through all encompassing experience</p>
+                <p class="project-faculty">
+                    Studio_Architecture Design_sem VII
+                    <br>
+                    Competition_WWF competitions
+                    <br>
+                    Collaborators_Abraham John architects
+                    <br>
+                    Type_Wildlife tourism
+                    <br>
+                    Location_Orbetello, Italy
+                    <br>
+                    Year_2020
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-fly" src="Data/Works/Architecture/Fly-Man-Go/cover.png" alt="Fly-Man-Go Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Biomimicry</span>
+                            <span class="tag">Wildlife Camouflage & Integration</span>
+                            <span class="tag">Modular dynamic structure</span>
+                            <span class="tag">Wildlife Tourism</span>
+                            <span class="tag">Multi-Zone Planning</span>
+                            <span class="tag">Tactile User Journey</span>
+                        </div>
+                        <p class="project-description">FLY-MAN-GO is a biomimetic response to wildlife tourism, drawing from the elegance of the Great Egret and Flamingo. The design translates bird-like qualities—feathered rooflines, slender stilt-like supports, and angular silhouettes—into immersive architecture. These observation cabins are not just shelters but sensory extensions of the wetland, allowing filtered light, focused views, and quiet coexistence. Designed for minimal intrusion, the cabins offer multi-level engagement—grounded, raised, and water-bound. Through subtle camouflage and tactility, the architecture dissolves into the landscape, enhancing the user's relationship with nature while honoring the delicate rhythms and visual language of the wild.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Sustainable Material Research</span>
+                            <span class="tag">3d form exploration</span>
+                            <span class="tag">Parametric Modelling</span>
+                            <span class="tag">Nature-Derived Form Finding</span>
+                            <span class="tag">Biomimetic Form Translation</span>
+                            <span class="tag">Wildlife Movement Mapping</span>
+                        </div>
+                        <p class="project-description">The design evolved through biomimetic analysis, wildlife behavior mapping, and experiential zoning. Inspired by avian anatomy and movement, forms were developed via sketches, physical models, and parametric tools. Detailed site studies and programmatic overlays shaped three cabin typologies across different immersion levels. Structural systems were resolved using profiling techniques for slender, expressive frames. Sustainable material research guided eco-sensitive choices, while spatial sequencing was informed by habitat transitions and wildlife pathways. The use of sectional design thinking, nature-derived form generation, and modular scalability ensured a dynamic, responsive architectural language integrated into both the natural terrain and the visitor's journey.</p>
+                    </div>
+                </div>
+            </div>            
+
+            <div class="work-item">
+                <hr>
+                <h3 class="project-title">Decoding Frie Otto</h3>
+                <p class="project-subtitle">Tensile & Pneumatic Structure</p>
+                <p class="project-faculty">
+                    Professor_Mangesh Belsare
+                    <br>
+                    Collaborators_group of 20 students
+                    <br>
+                    Type_Recreational
+                    <br>
+                    Year_2019
+                </p>
+
+                <div class="spread-carousel">
+                    <button class="carousel-btn prev-btn" aria-label="Previous">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <img id="spread-image-frie" src="Data/Works/Architecture/Decoding Frie Otto/cover.png" alt="Decoding Frie Otto Spread">
+                    <button class="carousel-btn next-btn" aria-label="Next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="fullscreen-btn" aria-label="Fullscreen">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Experimental Assembly</span>
+                            <span class="tag">Soap Bubble Logic</span>
+                            <span class="tag">Fabric Architecture</span>
+                            <span class="tag">Pneumatic Exploration</span>
+                            <span class="tag">Form Through Tension</span>
+                            <span class="tag">Frei Otto Principles</span>
+                        </div>
+                        <p class="project-description">Bari in Coexistence proposes a resilient housing module for the flood-prone Sundarbans, grounded in the philosophy of coexisting with nature rather than resisting it. The dwelling's conical roof and buoyant bamboo base are designed to adapt to rising water levels, enabling vertical displacement during floods. Organized into two blocks—work and living—the modular system supports flexible expansion. The structure integrates local and recycled materials like bamboo, rattan, golpatta leaves, and plastic barrels, combining traditional knowledge with climatic responsiveness. This hybrid system ensures not only structural stability but also social sustainability through communal courtyards, adaptable interiors, and resource-sharing spaces.</p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Soap Film Modeling</span>
+                            <span class="tag">Laser Cutting</span>
+                            <span class="tag">Fabric Stitching</span>
+                            <span class="tag">Catenary Network</span>   
+                            <span class="tag">Digital Fabrication</span>
+                            <span class="tag">1:5 Prototyping</span>
+                        </div>
+                        <p class="project-description">The process began with soap film experiments using thread networks and bamboo sticks to extract catenary geometries. These were interpreted into thread-filled wireframe cubes that acted as modular tension elements. Once composed, the unified form was reinforced with PVC tubes, custom laser-cut discs, and stitched fabric membranes. Rhino 3D was used to model the entire structure digitally, translating it into fabrication files. The team used laser cutting and 3D printing for precision components, while tension cloth was hand-stitched on-site. The final structure stood as a physical testament to pneumatic principles, built at 1:5 scale.</p>
+                    </div>
+                </div>
+            </div>     
+        </section>
     </main>
+    <hr>
+    <footer>
+        <p>Designed and developed by 0209VAIBHAV © All rights reserved</p>
+    </footer>
+    
+    <div id="spread-modal" class="spread-modal">
+      <div class="spread-modal-content">
+        <button class="carousel-btn prev-btn" aria-label="Previous">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <img id="modal-spread-image" src="" alt="Project Spread Fullscreen">
+        <button class="carousel-btn next-btn" aria-label="Next">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="modal-btn-group">
+          <button class="fullscreen-btn zoom-btn" aria-label="Zoom">
+            <i class="fas fa-search"></i>
+          </button>
+          <button class="fullscreen-btn minimize-btn" aria-label="Minimize">
+            <i class="fas fa-compress"></i>
+          </button>
+        </div>
+        <div id="magnifier-glass" class="magnifier-glass" style="display:none;"></div>
+      </div>
+    </div>
     
 <script src="script.js"></script>
-<footer>
-    <p>Designed and developed by <strong><span style="color: #ff0080;">0209</span><span style="color: #000;">VAIBHAV</span></strong> © All rights reserved</p>
-</footer>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
 </body>
 </html>

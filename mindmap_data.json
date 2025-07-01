@@ -1,0 +1,73 @@
+[
+    {
+      "id": "Vaibhav Jain",
+      "type": "center"
+    },
+    {
+      "id": "Projects",
+      "parent": "Vaibhav Jain"
+    },
+    {
+      "id": "Architecture",
+      "parent": "Projects"
+    },
+    {
+      "id": "Computation",
+      "parent": "Projects"
+    },
+    {
+      "id": "Administration Building",
+      "parent": "Architecture",
+      "title": "Administration Building",
+      "subtitle": "Dalmia Polypro PET Recycling Plant",
+      "media": "Data/Works/Architecture/Administration building/cover.png",
+      "link": "projects/administration-building.html"
+    },
+    {
+      "id": "Sample Architecture Project",
+      "parent": "Architecture",
+      "title": "Sample Architecture Project",
+      "subtitle": "A showcase of architectural design",
+      "tags": ["Design", "Space"],
+      "media": "assets/images/sample_architecture.jpg",
+      "link": "projects/sample-architecture.html"
+    },
+    {
+      "id": "City Gaze",
+      "parent": "Computation",
+      "title": "City Gaze",
+      "subtitle": "From Tech-Free Strolls to Screen-Focused Steps",
+      "tags": ["Urban Analysis", "Machine Learning"],
+      "media": "assets/images/city_gaze.jpg",
+      "link": "projects/city-gaze.html"
+    },
+    {
+      "id": "Odyssey",
+      "parent": "Computation",
+      "title": "Odyssey",
+      "subtitle": "Gamifying the Everyday Commute",
+      "tags": ["Gamification", "AI"],
+      "media": "assets/images/odyssey.jpg",
+      "link": "projects/odyssey.html"
+    },
+    {
+      "id": "CV",
+      "parent": "Vaibhav Jain",
+      "link": "resume.pdf"
+    },
+    {
+      "id": "Contact",
+      "parent": "Vaibhav Jain"
+    },
+    {
+      "id": "LinkedIn",
+      "parent": "Contact",
+      "link": "https://linkedin.com/in/vaibhavjain"
+    },
+    {
+      "id": "Email",
+      "parent": "Contact",
+      "link": "mailto:vaibhav@email.com"
+    }
+]
+  
