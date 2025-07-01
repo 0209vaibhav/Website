@@ -1210,24 +1210,24 @@ function initializeScrollNavigation() {
         
         // Get section positions
         const aboutSection = document.getElementById('about');
-        const homeSection = document.getElementById('home');
+        // const homeSection = document.getElementById('home'); // Commented out - uncomment when home section is added back
         const computationSection = document.getElementById('computation');
         const architectureSection = document.getElementById('architecture');
         
-        if (!aboutSection || !homeSection || !computationSection || !architectureSection) {
+        if (!aboutSection || !computationSection || !architectureSection) {
             console.warn('❌ One or more sections not found');
             return;
         }
         
         // Use getBoundingClientRect for more accurate detection
         const aboutRect = aboutSection.getBoundingClientRect();
-        const homeRect = homeSection.getBoundingClientRect();
+        // const homeRect = homeSection.getBoundingClientRect(); // Commented out - uncomment when home section is added back
         const computationRect = computationSection.getBoundingClientRect();
         const architectureRect = architectureSection.getBoundingClientRect();
         
         console.log('Section positions in viewport:', {
             about: { top: aboutRect.top, bottom: aboutRect.bottom },
-            home: { top: homeRect.top, bottom: homeRect.bottom },
+            // home: { top: homeRect.top, bottom: homeRect.bottom }, // Commented out - uncomment when home section is added back
             computation: { top: computationRect.top, bottom: computationRect.bottom },
             architecture: { top: architectureRect.top, bottom: architectureRect.bottom },
             viewportHeight: viewportHeight
@@ -1241,18 +1241,18 @@ function initializeScrollNavigation() {
         
         if (aboutRect.top <= viewportMiddle && aboutRect.bottom > viewportMiddle) {
             activeSectionId = 'about';
-        } else if (homeRect.top <= viewportMiddle && homeRect.bottom > viewportMiddle) {
-            activeSectionId = 'home';
+        // } else if (homeRect.top <= viewportMiddle && homeRect.bottom > viewportMiddle) {
+        //     activeSectionId = 'home'; // Commented out - uncomment when home section is added back
         } else if (computationRect.top <= viewportMiddle && computationRect.bottom > viewportMiddle) {
             activeSectionId = 'computation';
         } else if (architectureRect.top <= viewportMiddle && architectureRect.bottom > viewportMiddle) {
             activeSectionId = 'architecture';
         } else {
             // Fallback: if no section is clearly in the middle, use scroll position
-            if (scrollPosition < homeSection.offsetTop) {
+            if (scrollPosition < computationSection.offsetTop) {
                 activeSectionId = 'about';
-            } else if (scrollPosition < computationSection.offsetTop) {
-                activeSectionId = 'home';
+            // } else if (scrollPosition < homeSection.offsetTop) {
+            //     activeSectionId = 'home'; // Commented out - uncomment when home section is added back
             } else if (scrollPosition < architectureSection.offsetTop) {
                 activeSectionId = 'computation';
             } else {
@@ -1331,9 +1331,9 @@ function initializeScrollNavigation() {
     window.forceTest = function() {
         console.log('🧪 Force testing all sections...');
         setTimeout(() => testNavigation('about'), 100);
-        setTimeout(() => testNavigation('home'), 500);
-        setTimeout(() => testNavigation('computation'), 1000);
-        setTimeout(() => testNavigation('architecture'), 1500);
+        // setTimeout(() => testNavigation('home'), 500); // Commented out - uncomment when home section is added back
+        setTimeout(() => testNavigation('computation'), 500);
+        setTimeout(() => testNavigation('architecture'), 1000);
     };
 }
 
@@ -1528,19 +1528,12 @@ async function loadMindMap() {
       simulation.alpha(0.3).restart();
     }
 
-    // --- Improved force simulation for a more organic mindmap ---
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links)
-        .id(d => d.id)
-        .distance(d => 180 + Math.random() * 80) // more organic, less stiff
-        .strength(0.07) // lower strength for less rubberband effect
-      )
-      .force("charge", d3.forceManyBody().strength(-250)) // softer repulsion
-      .force("center", d3.forceCenter(window.innerWidth / 2, window.innerHeight / 2).strength(0.03)) // gentle centering
-      .force("y", d3.forceY(window.innerHeight / 2).strength(0.01)) // weak vertical gravity
+      .force("link", d3.forceLink(links).id(d => d.id).distance(250))
+      .force("charge", d3.forceManyBody().strength(-600))
       .force("collision", d3.forceCollide().radius(d => d.type === 'center' ? 90 : 80))
-      .alphaDecay(0.002) // slower decay for smoother settling
-      .velocityDecay(0.12); // slightly more friction
+      .alphaDecay(0.001)
+      .velocityDecay(0.1);
 
     updateSize();
     window.addEventListener('resize', updateSize);
@@ -1586,67 +1579,16 @@ async function loadMindMap() {
       .attr("x", -90).attr("y", -90)
       .attr("width", 180).attr("height", 90)
       .attr("clip-path", "inset(0 round 14px 14px 0 0)");
-    // Title (smaller, wrapped)
     projectNodes.append("text")
       .attr("class", "node-title")
-      .attr("x", 0).attr("y", 8)
+      .attr("x", 0).attr("y", 10)
       .attr("text-anchor", "middle")
-      .attr("font-size", 14)
-      .attr("font-weight", 700)
-      .attr("dominant-baseline", "middle")
-      .each(function(d) {
-        const text = d3.select(this);
-        const words = (d.title || "").split(" ");
-        let line = [];
-        let lineNumber = 0;
-        let lineHeight = 1.1; // ems
-        let y = 8;
-        let tspan = text.append("tspan").attr("x", 0).attr("y", y);
-        for (let i = 0; i < words.length; i++) {
-          line.push(words[i]);
-          tspan.text(line.join(" "));
-          if (tspan.node().getComputedTextLength() > 160 && line.length > 1) {
-            line.pop();
-            tspan.text(line.join(" "));
-            line = [words[i]];
-            tspan = text.append("tspan")
-              .attr("x", 0)
-              .attr("y", y + ++lineNumber * 16)
-              .text(words[i]);
-          }
-        }
-      });
-    // Subtitle (smaller, wrapped, below title)
+      .text(d => d.title);
     projectNodes.append("text")
       .attr("class", "node-subtitle")
-      .attr("x", 0).attr("y", 32)
+      .attr("x", 0).attr("y", 35)
       .attr("text-anchor", "middle")
-      .attr("font-size", 10)
-      .attr("font-weight", 400)
-      .attr("fill", "#444")
-      .attr("dominant-baseline", "middle")
-      .each(function(d) {
-        const text = d3.select(this);
-        const words = (d.subtitle || "").split(" ");
-        let line = [];
-        let lineNumber = 0;
-        let lineHeight = 1.1; // ems
-        let y = 32;
-        let tspan = text.append("tspan").attr("x", 0).attr("y", y);
-        for (let i = 0; i < words.length; i++) {
-          line.push(words[i]);
-          tspan.text(line.join(" "));
-          if (tspan.node().getComputedTextLength() > 160 && line.length > 1) {
-            line.pop();
-            tspan.text(line.join(" "));
-            line = [words[i]];
-            tspan = text.append("tspan")
-              .attr("x", 0)
-              .attr("y", y + ++lineNumber * 12)
-              .text(words[i]);
-          }
-        }
-      });
+      .text(d => d.subtitle);
     projectNodes.append("text")
       .attr("class", "node-tags")
       .attr("x", 0).attr("y", 60)
