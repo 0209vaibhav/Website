@@ -16,39 +16,186 @@
       "parent": "Projects"
     },
     {
+      "id": "Familial Housing",
+      "parent": "Architecture",
+      "title": "Familial Housing",
+      "subtitle": "Scrutinization of the FAMILIAL sensitivity in Mumbai",
+      "media": "Data/Works/Architecture/Familial Housing/cover.png"
+    },
+    {
+      "id": "High Performance Center",
+      "parent": "Architecture",
+      "title": "High Performance Center",
+      "subtitle": "By Chennai Super Kings from Indian Premier League",
+      "media": "Data/Works/Architecture/High Performance Center/cover.png"
+    },
+    {
+      "id": "In transit Hub",
+      "parent": "Architecture",
+      "title": "In transit Hub",
+      "subtitle": "Reinvigorating short term housing",
+      "media": "Data/Works/Architecture/In transit Hub/cover.png"
+    },
+    {
       "id": "Administration Building",
       "parent": "Architecture",
       "title": "Administration Building",
-      "subtitle": "Dalmia Polypro PET Recycling Plant",
-      "media": "Data/Works/Architecture/Administration building/cover.png",
-      "link": "projects/administration-building.html"
+      "subtitle": "Dalmia Polypro PET Recycling Plant Corporate Office",
+      "media": "Data/Works/Architecture/Administration building/cover.png"
     },
     {
-      "id": "Sample Architecture Project",
+      "id": "Multi-Functional Entrance block",
       "parent": "Architecture",
-      "title": "Sample Architecture Project",
-      "subtitle": "A showcase of architectural design",
-      "tags": ["Design", "Space"],
-      "media": "assets/images/sample_architecture.jpg",
-      "link": "projects/sample-architecture.html"
+      "title": "Multi-Functional Entrance block",
+      "subtitle": "Dalmia Polypro PET Recycling Plant",
+      "media": "Data/Works/Architecture/Multi-Functional Entrance block/cover.png"
     },
     {
-      "id": "City Gaze",
-      "parent": "Computation",
-      "title": "City Gaze",
-      "subtitle": "From Tech-Free Strolls to Screen-Focused Steps",
-      "tags": ["Urban Analysis", "Machine Learning"],
-      "media": "assets/images/city_gaze.jpg",
-      "link": "projects/city-gaze.html"
+      "id": "Eating Space",
+      "parent": "Architecture",
+      "title": "Eating Space",
+      "subtitle": "Dalmia Polypro PET Recycling Plant",
+      "media": "Data/Works/Architecture/Eating space/cover.png"
     },
     {
-      "id": "Odyssey",
+      "id": "Discrete Construction",
+      "parent": "Architecture",
+      "title": "Discrete Construction",
+      "subtitle": "Modular Structural System in Family-Specific Customizable Housing",
+      "media": "Data/Works/Architecture/Discrete Construction/cover.png"
+    },
+    {
+      "id": "Lokal Parklet",
+      "parent": "Architecture",
+      "title": "Lokal Parklet",
+      "subtitle": "An Outdoor Restaurant Extension Framing Skyline and Shade",
+      "media": "Data/Works/Architecture/Lokal Parklet/cover.png"
+    },
+    {
+      "id": "House of Warp & Weft",
+      "parent": "Architecture",
+      "title": "House of Warp & Weft",
+      "subtitle": "Reimagining Tradition through Recreation, Learning & Living in Kohima",
+      "media": "Data/Works/Architecture/House of Warp & Weft/cover.png"
+    },
+    {
+      "id": "Objects.Institutions.Identities",
+      "parent": "Architecture",
+      "title": "Objects.Institutions.Identities",
+      "subtitle": "Kohima study trip documentation",
+      "media": "Data/Works/Architecture/Objects.Institutions.Identities/cover.png"
+    },
+    {
+      "id": "Vertical Village",
+      "parent": "Architecture",
+      "title": "Vertical Village",
+      "subtitle": "Exploring the Realm of Urban Rurality Housing",
+      "media": "Data/Works/Architecture/Vertical Village/cover.png"
+    },
+    {
+      "id": "Membrum Vestigial",
+      "parent": "Architecture",
+      "title": "Membrum Vestigial",
+      "subtitle": "Karigari Workers Co-op Association",
+      "media": "Data/Works/Architecture/Membrum Vestigial/cover.png"
+    },
+    {
+      "id": "Bari in Coexistence",
+      "parent": "Architecture",
+      "title": "Bari in Coexistence",
+      "subtitle": "Rehabilitation for the Sundarbans houses",
+      "media": "Data/Works/Architecture/Bari in Coexistence/cover.png"
+    },
+    {
+      "id": "Sangam Gully",
+      "parent": "Architecture",
+      "title": "Sangam Gully",
+      "subtitle": "Using the OLD to create NEW",
+      "media": "Data/Works/Architecture/Sangam Gully/cover.png"
+    },
+    {
+      "id": "Fragments of Sidhpur History",
+      "parent": "Architecture",
+      "title": "Fragments of Sidhpur History",
+      "subtitle": "Sidhpur study trip documentation",
+      "media": "Data/Works/Architecture/Fragments of Sidhpur History/cover.png"
+    },
+    {
+      "id": "Fly-Man-Go",
+      "parent": "Architecture",
+      "title": "Fly-Man-Go",
+      "subtitle": "Trail through all encompassing experience",
+      "media": "Data/Works/Architecture/Fly-Man-Go/cover.png"
+    },
+    {
+      "id": "Decoding Frie Otto",
+      "parent": "Architecture",
+      "title": "Decoding Frie Otto",
+      "subtitle": "Tensile & Pneumatic Structure",
+      "media": "Data/Works/Architecture/Decoding Frie Otto/cover.png"
+    },
+    {
+      "id": "MEMENTO",
       "parent": "Computation",
-      "title": "Odyssey",
-      "subtitle": "Gamifying the Everyday Commute",
-      "tags": ["Gamification", "AI"],
-      "media": "assets/images/odyssey.jpg",
-      "link": "projects/odyssey.html"
+      "title": "MEMENTO",
+      "subtitle": "Real-time Urban Experiences",
+      "media": "Data/Works/Computation/Memento - Web-app platform/thumbnail.png"
+    },
+    {
+      "id": "ML in MEMENTO",
+      "parent": "Computation",
+      "title": "ML in MEMENTO",
+      "subtitle": "ML Pipeline for Automated Urban Experience Classification",
+      "media": "Data/Works/Computation/Memento - Computation and Machine learning/thumbnail.png"
+    },
+    {
+      "id": "Studio In Flux",
+      "parent": "Computation",
+      "title": "Studio In Flux",
+      "subtitle": "How spatial configurations influence movement within the Columbia GSAPP Studio",
+      "media": "Data/Works/Computation/Studio In Flux/thumbnail.png"
+    },
+    {
+      "id": "The Urban Fringe",
+      "parent": "Computation",
+      "title": "The Urban Fringe",
+      "subtitle": "Spatial Thresholds Between Public Sidewalk Life and Private Eating Enterprises",
+      "media": "Data/Works/Computation/The Urban Fringe/thumbnail.png"
+    },
+    {
+      "id": "BENTO",
+      "parent": "Computation",
+      "title": "BENTO",
+      "subtitle": "Next-Gen Retail Store Management Platform",
+      "media": "Data/Works/Computation/Bento/thumbnail.jpg"
+    },
+    {
+      "id": "Urban Computing",
+      "parent": "Computation",
+      "title": "Urban Computing",
+      "subtitle": "Exploratory Research on Data Driven Urban Computational Design",
+      "media": "Data/Works/Computation/Sidewalk Reclamation Computing Natural Interventions/thumbnail.jpg"
+    },
+    {
+      "id": "Hue Knew",
+      "parent": "Computation",
+      "title": "Hue Knew",
+      "subtitle": "Interactive Film Recognition Game",
+      "media": "Data/Works/Computation/Hue knew/thumbnail.PNG"
+    },
+    {
+      "id": "Oblivian to Odyssey",
+      "parent": "Computation",
+      "title": "Oblivian to Odyssey",
+      "subtitle": "Understanding the disconnection between people and their urban surroundings",
+      "media": "Data/Works/Computation/Oblivian to Odyssey/thumbnail.jpg"
+    },
+    {
+      "id": "Gaze Tracker",
+      "parent": "Computation",
+      "title": "Gaze Tracker",
+      "subtitle": "Mapping and Shaping Attention during OBLIVIAN",
+      "media": "Data/Works/Computation/Gaze Tracker/thumbnail.jpg"
     },
     {
       "id": "CV",
@@ -62,12 +209,12 @@
     {
       "id": "LinkedIn",
       "parent": "Contact",
-      "link": "https://linkedin.com/in/vaibhavjain"
+      "link": "https://linkedin.com/in/0209vaibhav"
     },
     {
       "id": "Email",
       "parent": "Contact",
-      "link": "mailto:vaibhav@email.com"
+      "link": "mailto:0209vaibhav@gmail.com"
     }
 ]
   
