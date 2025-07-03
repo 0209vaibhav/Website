@@ -26,7 +26,8 @@
     font-weight: 900;
     text-align: center;
     line-height: 1.0;
-    margin-bottom: 0;
+    margin-bottom: 0px;
+    margin-top: 0px;
     background-image:
       linear-gradient(90deg, #4f8efc 0%, #8e6be9 33%, #e964a4 66%, #ff512f 100%),
       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='noiseFilter'><feTurbulence type='fractalNoise' baseFrequency='2.5' numOctaves='5' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23noiseFilter)' opacity='0.6'/></svg>");
@@ -42,8 +43,8 @@
 .hero-subtitle {
     font-size: 1.08em;
     font-weight: 600;
-    margin-bottom: 36px;
-    margin-top: 0;
+    margin-bottom: 0px;
+    margin-top: 0px;
     text-align: center;
     color: #222;
     font-style: italic;
