@@ -1160,11 +1160,12 @@ nav ul li {
     z-index: auto;
     min-width: auto;
     transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), margin 0.3s ease;
+    gap: 4px;
 }
 
 .submenu.open {
     max-height: 600px;
-    margin: 8px 0 0 0;
+    margin: 8px 0 8px 0;
 }
 
 .submenu li {
@@ -1178,13 +1179,14 @@ nav ul li {
     color: #888;
     font-size: 10px;
     font-weight: auto;
-    padding: 4px 0 4px 0;
+    padding: 0 0 0 0;
     text-decoration: none;
     transition: all 0.2s ease;
     line-height: 1.3;
     border: none;
     background: none;
     border-radius: 0;
+    gap: 4px;
 }
 
 .submenu a:hover {
