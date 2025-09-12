@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Vaibhav Jain - Network Diagram</title>
+    <link rel="stylesheet" href="network-diagram.css">
+</head>
+<body>
+    <div class="left-nav">
+        <div class="nav-links-block">
+            <nav>
+                <ul>
+                    <li><a href="#" id="reset-btn" title="Reset View"><i class="fas fa-home"></i><span>RESET</span></a></li>
+                    <li><a href="#" id="auto-layout-btn" title="Auto Layout"><i class="fas fa-magic"></i><span>LAYOUT</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="legend legend-bottom">
+            <div class="legend-item">
+                <div class="legend-color education"></div>
+                <span>Education</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color experience"></div>
+                <span>Experience</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color skills"></div>
+                <span>Skills</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color location"></div>
+                <span>Location</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="diagram-container">
+        <svg id="network-svg"></svg>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="network-diagram.js"></script>
+</body>
+</html> 

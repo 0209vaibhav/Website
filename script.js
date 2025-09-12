@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Initialize scroll-based navigation
     initializeScrollNavigation();
+    initializeNavSubmenus();
 
     // Familial Housing project spread carousel
     const spreadsFamilial = [
@@ -1150,6 +1151,113 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 });
+// Helper functions for navigation
+function slugify(text) {
+    return text
+        .toString()
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+}
+
+function ensureProjectAnchors(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return [];
+    const titles = section.querySelectorAll('h3.project-title');
+    const entries = [];
+    titles.forEach((el) => {
+        const title = el.textContent.trim();
+        const id = 'proj-' + slugify(title);
+        if (!el.id) el.id = id;
+        entries.push({ id, title });
+    });
+    return entries;
+}
+
+function populateSubmenu(ul, sectionId) {
+    ul.innerHTML = '';
+    let items = [];
+    if (sectionId === 'computation' || sectionId === 'architecture') {
+        items = ensureProjectAnchors(sectionId);
+    }
+    items.forEach(({ id, title }) => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${id}`;
+        a.textContent = title;
+        a.setAttribute('data-project-id', id);
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.getElementById(id);
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        li.appendChild(a);
+        ul.appendChild(li);
+    });
+}
+
+function highlightProjectInSubmenu(projectId, projectTitle) {
+    // Clear all project highlights first
+    clearProjectHighlighting();
+    
+    // Find and highlight the specific project
+    const projectLinks = document.querySelectorAll('.submenu a[data-project-id]');
+    
+    projectLinks.forEach(link => {
+        const linkProjectId = link.getAttribute('data-project-id');
+        const linkText = link.textContent.trim();
+        
+        if (linkProjectId === projectId || linkText === projectTitle) {
+            link.classList.add('active-project');
+        }
+    });
+}
+
+function clearProjectHighlighting() {
+    const projectLinks = document.querySelectorAll('.submenu a[data-project-id]');
+    projectLinks.forEach(link => {
+        link.classList.remove('active-project');
+    });
+}
+
+function initializeNavSubmenus() {
+    const navItems = document.querySelectorAll('nav ul > li');
+
+    // Close all submenus helper
+    function closeAll() {
+        document.querySelectorAll('.submenu').forEach(ul => ul.classList.remove('open'));
+        document.querySelectorAll('.nav-arrow').forEach(ar => ar.classList.remove('open'));
+    }
+
+    navItems.forEach((li) => {
+        const link = li.querySelector('a');
+        const arrow = li.querySelector('.nav-arrow');
+        const submenu = li.querySelector('.submenu');
+        if (!link || !arrow || !submenu) return;
+
+        const sectionId = submenu.getAttribute('data-section');
+
+        // Populate once on first open
+        let populated = false;
+        arrow.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = submenu.classList.contains('open');
+            closeAll();
+            if (!isOpen) {
+                if (!populated) {
+                    populateSubmenu(submenu, sectionId);
+                    populated = true;
+                }
+                submenu.classList.add('open');
+                arrow.classList.add('open');
+            }
+        });
+    });
+}
+
 
 function initializeScrollNavigation() {
     const sections = document.querySelectorAll('.scroll-section');
@@ -1196,6 +1304,25 @@ function initializeScrollNavigation() {
             currentActiveSection = sectionId;
             console.log(`✅ Successfully activated ${sectionId} navigation`);
             
+            // Handle submenu expansion/collapse
+            const navItem = navLink.closest('li');
+            const submenu = navItem ? navItem.querySelector('.submenu') : null;
+            const arrow = navItem ? navItem.querySelector('.nav-arrow') : null;
+            
+            // Close all submenus first
+            document.querySelectorAll('.submenu').forEach(ul => ul.classList.remove('open'));
+            document.querySelectorAll('.nav-arrow').forEach(ar => ar.classList.remove('open'));
+            
+            // Only expand submenu if it's computation or architecture
+            if (submenu && arrow) {
+                const sectionId = submenu.getAttribute('data-section');
+                if (sectionId === 'computation' || sectionId === 'architecture') {
+                    populateSubmenu(submenu, sectionId);
+                    submenu.classList.add('open');
+                    arrow.classList.add('open');
+                }
+            }
+            
             // Verify it was added
             console.log(`${sectionId} link has active-link class:`, navLink.classList.contains('active-link'));
         } else {
@@ -1208,41 +1335,65 @@ function initializeScrollNavigation() {
         const scrollPosition = window.scrollY;
         const viewportHeight = window.innerHeight;
         
-        // Get section positions
+        // Find the most visible project first
+        const projectTitles = document.querySelectorAll('h3.project-title');
+        let activeProject = null;
+        let minDistance = Infinity;
+        
+        projectTitles.forEach(title => {
+            const rect = title.getBoundingClientRect();
+            const distanceFromTop = Math.abs(rect.top - viewportHeight * 0.3);
+            
+            if (distanceFromTop < minDistance && rect.top < viewportHeight && rect.bottom > 0) {
+                minDistance = distanceFromTop;
+                activeProject = title;
+            }
+        });
+        
+        // If we found a project, handle it
+        if (activeProject) {
+            const section = activeProject.closest('.scroll-section');
+            if (section) {
+                const sectionId = section.id;
+                const projectTitle = activeProject.textContent.trim();
+                
+                // Ensure project has an ID
+                if (!activeProject.id) {
+                    const projectId = 'proj-' + slugify(projectTitle);
+                    activeProject.id = projectId;
+                }
+                
+                const projectId = activeProject.id;
+                
+                // Set active section
+                if (currentActiveSection !== sectionId) {
+                    setActiveNav(sectionId);
+                }
+                
+                // Highlight the project in submenu
+                highlightProjectInSubmenu(projectId, projectTitle);
+                return;
+            }
+        }
+        
+        // No project found, check sections
         const aboutSection = document.getElementById('about');
-        // const homeSection = document.getElementById('home'); // Commented out - uncomment when home section is added back
         const computationSection = document.getElementById('computation');
         const architectureSection = document.getElementById('architecture');
         
         if (!aboutSection || !computationSection || !architectureSection) {
-            console.warn('❌ One or more sections not found');
             return;
         }
         
-        // Use getBoundingClientRect for more accurate detection
         const aboutRect = aboutSection.getBoundingClientRect();
-        // const homeRect = homeSection.getBoundingClientRect(); // Commented out - uncomment when home section is added back
         const computationRect = computationSection.getBoundingClientRect();
         const architectureRect = architectureSection.getBoundingClientRect();
         
-        console.log('Section positions in viewport:', {
-            about: { top: aboutRect.top, bottom: aboutRect.bottom },
-            // home: { top: homeRect.top, bottom: homeRect.bottom }, // Commented out - uncomment when home section is added back
-            computation: { top: computationRect.top, bottom: computationRect.bottom },
-            architecture: { top: architectureRect.top, bottom: architectureRect.bottom },
-            viewportHeight: viewportHeight
-        });
-        
         let activeSectionId = null;
-        
-        // Check which section is most visible in the viewport
-        // A section is considered "active" if its top is above the middle of the viewport
         const viewportMiddle = viewportHeight / 2;
         
         if (aboutRect.top <= viewportMiddle && aboutRect.bottom > viewportMiddle) {
             activeSectionId = 'about';
-        // } else if (homeRect.top <= viewportMiddle && homeRect.bottom > viewportMiddle) {
-        //     activeSectionId = 'home'; // Commented out - uncomment when home section is added back
         } else if (computationRect.top <= viewportMiddle && computationRect.bottom > viewportMiddle) {
             activeSectionId = 'computation';
         } else if (architectureRect.top <= viewportMiddle && architectureRect.bottom > viewportMiddle) {
@@ -1251,8 +1402,6 @@ function initializeScrollNavigation() {
             // Fallback: if no section is clearly in the middle, use scroll position
             if (scrollPosition < computationSection.offsetTop) {
                 activeSectionId = 'about';
-            // } else if (scrollPosition < homeSection.offsetTop) {
-            //     activeSectionId = 'home'; // Commented out - uncomment when home section is added back
             } else if (scrollPosition < architectureSection.offsetTop) {
                 activeSectionId = 'computation';
             } else {
@@ -1260,11 +1409,13 @@ function initializeScrollNavigation() {
             }
         }
         
-        console.log('Determined active section:', activeSectionId);
-        
         if (currentActiveSection !== activeSectionId) {
-            console.log(`🔄 Switching from ${currentActiveSection} to ${activeSectionId}`);
             setActiveNav(activeSectionId);
+        }
+        
+        // Clear project highlighting when not in a project section
+        if (activeSectionId === 'about') {
+            clearProjectHighlighting();
         }
     }
     
