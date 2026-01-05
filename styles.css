@@ -8,6 +8,7 @@
     background: #ffffff;
     opacity: 1;
     transform: translateY(0);
+    position: relative;
 }
 
 .hero-section.fade-out {
@@ -720,6 +721,53 @@ hr {
     border-radius: 8px;
 }
 
+.placeholder-container {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(0, 0, 0, 0.02) 10px,
+            rgba(0, 0, 0, 0.02) 20px
+        );
+    pointer-events: none;
+}
+
+.placeholder-content {
+    text-align: center;
+    z-index: 1;
+    position: relative;
+}
+
+.placeholder-text {
+    font-size: 18px;
+    color: #666666;
+    margin: 0 0 15px 0;
+    font-weight: 500;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.2;
+}
+
 .grid-iframe {
     width: 100%;
     height: 400px;
@@ -816,14 +864,47 @@ hr {
 .link-icon {
     font-size: 12px;
     opacity: 0.7;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-.work-item p {
-    font-size: 14px;
-    color: #666;
-    margin: 0;
-    line-height: 1.5;
+/* Enhanced link styling for project-faculty */
+.project-faculty {
+    text-align: center;
+    position: relative;
+    z-index: 100;
+    pointer-events: auto;
+    isolation: isolate;
 }
+
+.project-faculty a {
+    display: inline-flex;
+    align-items: center;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}
+
+.project-faculty a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transform: translateY(-1px);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.project-faculty a .link-icon {
+    color: #000000;
+    font-size: 12px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-weight: bold;
+}
+
 
 .work-item-content-left .tags {
     justify-content: flex-end;
