@@ -64,58 +64,8 @@
 
             <br>
 
+        <!-- <MEMENTO> -->
             <div class="work-item">
-                <h3 class="project-title">IBEX</h3>
-                <p class="project-subtitle">AI-Driven Real Estate & Urban Development Platform</p>
-                <p class="project-faculty">
-                    Project Context: Kingdom of Saudi Arabia (KSA)<br>
-                    Collaborators: <a href="https://www.linkedin.com/company/aktus-ai/" target="_blank" rel="noopener noreferrer">Aktus AI<span class="link-icon">→</span></a>
-                </p>
-
-                <div class="work-item-thumbnail">
-                    <div class="placeholder-container">
-                        <div class="placeholder-content">
-                            <p class="placeholder-text">Work in Progress | Non-Disclosure Agreement</p>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="work-item-content-flex">
-                    <div class="concept-section">
-                        <h4>Concept</h4>
-                        <div class="tags">
-                            <span class="tag">AI-Driven Design Platform</span>
-                            <span class="tag">Computational Design</span>
-                            <span class="tag">Urban Development Intelligence</span>
-                            <span class="tag">Parametric Masterplanning</span>
-                            <span class="tag">Speculative Visualization</span>
-                            <span class="tag">Performance Analysis & Financial Reporting</span>
-                        </div>
-                        <p class="project-description">
-                            IBEX is an AI-driven real estate and urban development platform designed for the Kingdom of Saudi Arabia, enabling users to configure, generate, and evaluate architectural and urban proposals through parameter-driven workflows. The platform integrates site selection, development constraints, and financial inputs to automatically generate masterplans, building geometries, architectural identities, and contextual design outputs. By combining computational design systems with AI-based visualization and reporting, IBEX transforms early-stage planning into an interactive, data-informed design process that bridges architecture, urbanism, and decision-making.
-                        </p>
-                    </div>
-                    
-                    <div class="methods-section">
-                        <h4>Methods and Tools</h4>
-                        <div class="tags">
-                            <span class="tag">Parametric & Generative Workflows</span>
-                            <span class="tag">API Integration</span>
-                            <span class="tag">Automated Design Pipelines </span>
-                            <span class="tag">AI-Assisted Visual Rendering</span>
-                            <span class="tag">Prompt Engineering for reporting</span>
-                            <span class="tag">Computational Masterplanning</span>
-                        </div>
-                        <p class="project-description">
-                            The workflow combines parametric modeling in Rhino and Grasshopper with backend API integrations to generate low-rise and high-rise building geometry, masterplan massing, and districting strategies. Grasshopper systems produce 19 distinct KSA architectural identity styles, while geometry is prepared for AI-based visualization using Gemini API via Nanobanana. Structured prompt engineering enables automated generation of context-aware reports covering infrastructure, sustainability, mobility, and development strategy. Together, these systems support rapid iteration, scenario testing, and scalable urban design production within a single platform.
-                        </p>
-                    </div>
-                </div>
-
-            <br>
-
-            <div class="work-item">
-                <hr>
                 <h3 class="project-title">MEMENTO</h3>
                 <p class="project-subtitle">Real-time Urban Experiences</p>
                 <p class="project-faculty">
@@ -166,11 +116,11 @@
                         <p class="project-description">MEMENTO combines computational design, geospatial mapping, and machine learning to curate live urban experiences. The platform integrates Mapbox, Google Maps API, and D3.js for real-time visualization, with Firebase managing dynamic media and location data. Public datasets and scraped city feeds are enriched through multi-label classification models predicting categories, tags, and durations. The workflow—capture, discover, interact—ensures both user-generated and public mementos are mapped, filtered, and recommended in real time. Machine learning pipelines automate classification and personalization, while interactive web-app features foster exploration and engagement, transforming raw urban inputs into structured, discoverable narratives.</p>
                     </div>
                 </div>
-
+            </div>
             <br>
 
+        <!-- <ML in MEMENTO> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">ML in MEMENTO</h3>
                 <p class="project-subtitle">ML Pipeline for Automated Urban Experience Classification</p>
                 <p class="project-faculty">
@@ -217,11 +167,11 @@
                         <p class="project-description">This project builds a full ML pipeline for urban content classification using Python-based tools like BeautifulSoup, Selenium, and Scikit-learn. After scraping data, it undergoes preprocessing: text cleaning, feature extraction, and label encoding. Three supervised models are trained—Logistic Regression for categories, Random Forest for multi-label tags, and Decision Tree for estimating duration—using annotated training data. Models are evaluated via cross-validation and updated automatically through cloud-based retraining schedules. API endpoints integrate predictions into the live web app. This structured pipeline not only ensures high-quality metadata tagging but also streamlines the inclusion of public mementos into MEMENTO’s evolving experience ecosystem.</p>
                     </div>
                 </div>
-
+            </div>
             <br>
 
-               <div class="work-item">
-                <hr>
+        <!-- <Studio In Flux> -->
+            <div class="work-item">
                 <h3 class="project-title">Studio In Flux</h3>
                 <p class="project-subtitle">How spatial configurations influence movement within the Columbia GSAPP Studio.</p>
                 <p class="project-faculty">Project advisor_William Martin<br>Collaborators_Manas Bhatia</p>
@@ -270,13 +220,11 @@
                         <p class="project-description">The project uses agent-based simulation to replicate real-time circulation in the studio, modeling students, faculty, and visitors as dynamic agents. Behavioral parameters—such as interaction frequency, movement speed, and preferred routes—were defined from onsite observation studies. The simulation generates heatmap visualizations and layout efficiency metrics, identifying high-density interaction areas and bottlenecks. Spatial analysis tools are applied to test iterative layout variations, measuring their impact on circulation smoothness and collaboration potential. Results are validated by comparing simulated patterns with real-world usage. This process creates a feedback loop for data-informed spatial interventions, ensuring design decisions align with observed human behavior.</p>
                     </div>
                 </div>
-
+            </div>
             <br>
-
-            <br>
-
+            
+        <!-- <The Urban Fringe> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">The Urban Fringe</h3>
                 <p class="project-subtitle">Spatial Thresholds Between Public Sidewalk Life and Private Eating Enterprises</p>
                 <p class="project-faculty">
@@ -320,9 +268,11 @@
                         <p class="project-description">The project began with geospatial mapping of Manhattan sidewalks, clustering them by area, width, and adjacency. Café datasets were layered, recording dimensions, placement (sidewalk/roadway/hybrid), and enclosure type (open, enclosed, or hybrid). This produced geo-plans, timelines, and visual clusters showing areas of high vulnerability. A selected site was modeled in 3D to analyze micro-conditions: radiation mapping exposed heat hotspots, claustrophobia analysis measured compression effects, and tree canopy data highlighted shade gaps. Computational simulations then generated proposed interventions, introducing new trees sized and positioned according to radiation values. This data-driven process demonstrates how analysis can guide equitable, climate-responsive sidewalk design.</p>
                     </div>
                 </div>
+            </div>
+            <br>
 
+        <!-- <BENTO> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">BENTO</h3>
                 <p class="project-subtitle">Next-Gen Retail Store Management Platform</p>
                 <p class="project-faculty">
@@ -368,11 +318,116 @@
                         <p class="project-description">The BENTO system was developed using Rhino and Grasshopper for parametric layout generation. A custom adjacency generator produced spatial configurations based on product categories, flow constraints, and context. NYC Open Data APIs were integrated to adapt layouts to urban conditions. Customer movement data and sales records informed spatial analytics, identifying hotspots and inefficiencies. Iterative simulations generated layout variations, evaluated through metrics like visibility, circulation, and product accessibility. Machine learning refined placement strategies using past performance. This integrated approach allowed BENTO to deliver intelligent, data-responsive retail layouts grounded in both design logic and operational performance.</p>
                     </div>
                 </div>
-
+            </div>
             <br>
 
+        <!-- <IBEX> -->
             <div class="work-item">
-                <hr>
+                <h3 class="project-title">IBEX</h3>
+                <p class="project-subtitle">AI-Driven Real Estate & Urban Development Platform</p>
+                <p class="project-faculty">
+                    Project Context: Kingdom of Saudi Arabia (KSA)<br>
+                    Collaborators: <a href="https://www.linkedin.com/company/aktus-ai/" target="_blank" rel="noopener noreferrer">Aktus AI<span class="link-icon">→</span></a>
+                </p>
+
+                <div class="work-item-thumbnail">
+                    <div class="placeholder-container">
+                        <div class="placeholder-content">
+                            <p class="placeholder-text">Work in Progress | Non-Disclosure Agreement</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">AI-Driven Design Platform</span>
+                            <span class="tag">Computational Design</span>
+                            <span class="tag">Urban Development Intelligence</span>
+                            <span class="tag">Parametric Masterplanning</span>
+                            <span class="tag">Speculative Visualization</span>
+                            <span class="tag">Performance Analysis & Financial Reporting</span>
+                        </div>
+                        <p class="project-description">
+                            IBEX is an AI-driven real estate and urban development platform designed for the Kingdom of Saudi Arabia, enabling users to configure, generate, and evaluate architectural and urban proposals through parameter-driven workflows. The platform integrates site selection, development constraints, and financial inputs to automatically generate masterplans, building geometries, architectural identities, and contextual design outputs. By combining computational design systems with AI-based visualization and reporting, IBEX transforms early-stage planning into an interactive, data-informed design process that bridges architecture, urbanism, and decision-making.
+                        </p>
+                    </div>
+                    
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Parametric & Generative Workflows</span>
+                            <span class="tag">API Integration</span>
+                            <span class="tag">Automated Design Pipelines </span>
+                            <span class="tag">AI-Assisted Visual Rendering</span>
+                            <span class="tag">Prompt Engineering for reporting</span>
+                            <span class="tag">Computational Masterplanning</span>
+                        </div>
+                        <p class="project-description">
+                            The workflow combines parametric modeling in Rhino and Grasshopper with backend API integrations to generate low-rise and high-rise building geometry, masterplan massing, and districting strategies. Grasshopper systems produce 19 distinct KSA architectural identity styles, while geometry is prepared for AI-based visualization using Gemini API via Nanobanana. Structured prompt engineering enables automated generation of context-aware reports covering infrastructure, sustainability, mobility, and development strategy. Together, these systems support rapid iteration, scenario testing, and scalable urban design production within a single platform.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+                    
+        <!-- <LayoutLab> -->
+            <div class="work-item">
+                <h3 class="project-title">LayoutLab</h3>
+                <p class="project-subtitle">Interactive Computational Floor Planning Tool</p>
+
+                <div class="project-links">
+                    <a href="https://https://0209vaibhav.github.io/layoutlab/" target="_blank" class="project-link">
+                        Online Tool<span class="link-icon">→</span>  
+                    </a>
+                    <a href="https://github.com/0209vaibhav/layoutlab" target="_blank" class="project-link">
+                        Github Repository<span class="link-icon">→</span>  
+                    </a>
+                </div>
+
+                <div class="work-item-thumbnail">
+                    <div class="video-container">
+                        <img src="Data/Works/Computation/LayoutLab/thumbnail.PNG" alt="LayoutLab Cover" class="video-hover-cover">
+                    </div>
+                </div>
+
+                <div class="work-item-content-flex">
+                    <div class="concept-section">
+                        <h4>Concept</h4>
+                        <div class="tags">
+                            <span class="tag">Computational Planning</span>
+                            <span class="tag">Layout Generation</span>
+                            <span class="tag">Spatial Optimization</span>
+                            <span class="tag">Variant Exploration</span>
+                            <span class="tag">Program-Based Design</span>
+                            <span class="tag">Interactive Visualization</span>
+                        </div>
+                        <p class="project-description">
+                            LayoutLab is an interactive computational floor planning tool that generates and compares spatial layouts within a defined boundary. It visualizes program areas as configurable blocks, allowing users to explore spatial efficiency, proportions, and alternatives. The system helps designers quickly evaluate planning strategies without relying on traditional CAD workflows or manual layout iteration.
+                        </p>
+                    </div>
+
+                    <div class="methods-section">
+                        <h4>Methods and Tools</h4>
+                        <div class="tags">
+                            <span class="tag">Python Solver</span>
+                            <span class="tag">Rectangle Packing</span>
+                            <span class="tag">SVG Visualization</span>
+                            <span class="tag">Variant Comparison</span>
+                            <span class="tag">Parametric Controls</span>
+                            <span class="tag">Real-time Metrics</span>
+                        </div>
+                        <p class="project-description">
+                            The system combines Python-based layout generation with a web visualization interface. A rectangle packing solver produces layout variants from adjustable program parameters, while SVG rendering enables interactive zoom, comparison, and analysis. Layout metrics and solver configurations are evaluated dynamically, supporting rapid design exploration through configurable geometry, variant comparison, and real-time feedback.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <br>
+
+        <!-- <Urban Computing> -->
+            <div class="work-item">
                 <h3 class="project-title">Urban Computing</h3>
                 <p class="project-subtitle">Exploratory Research on Data Driven Urban Computational Design</p>
                 <p class="project-faculty">
@@ -416,12 +471,11 @@
                         <p class="project-description">Urban Computing utilized computational modeling platforms to simulate environmental conditions and spatial dynamics along urban sidewalks. Radiation analysis tools were used to map sunlight exposure and identify heat-prone areas. Data-driven design methods integrated GIS datasets and pedestrian movement patterns to inform intervention strategies. Environmental simulation software tested the impact of proposed green infrastructure, such as shade trees and buffer zones, on microclimate and walkability. The workflow included iterative scenario modeling, performance evaluation, and visualization of spatial data. The process enabled evidence-based recommendations for improving pedestrian comfort, reducing heat, and enhancing the ecological quality of public pathways.</p>
                     </div>
                 </div>
-
-
+            </div>
             <br>
 
+        <!-- <Hue Knew> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Hue Knew</h3>
                 <p class="project-subtitle">Interactive Film Recognition Game</p>
                 <p class="project-faculty">
@@ -467,11 +521,11 @@
                         <p class="project-description">The quiz was built using HTML, CSS, and JavaScript, with D3.js and Chart.js enabling real-time data visualization. The TMDB API provides up-to-date film assets like posters, release dates, and genres. Custom image processing creates blurred media for gameplay. The system tracks individual player performance, analyzing correct and incorrect responses across various dimensions. A responsive user interface ensures mobile compatibility, while performance metrics populate an interactive dashboard that visualizes user analytics. Data is used to adjust difficulty levels and provide genre-based learning insights. Hue Knew merges game mechanics with user data to enhance engagement and cinematic understanding.</p>
                     </div>
                 </div>
-
+            </div>
             <br>
 
+        <!-- <Oblivian to Odyssey> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Oblivian to Odyssey</h3>
                 <p class="project-subtitle">Understanding the disconnection between people and their urban surroundings</p>
                 <p class="project-faculty">Project advisor_Laura Kurgan and Snoweria Zhang</p>
@@ -511,15 +565,14 @@
                             <span class="tag">Interactive Design</span>          
                         </div>
                         <p class="project-description">The study combined behavioral research and computational methods to analyze urban disengagement. Gaze-tracking devices recorded visual focus during commutes, while mobile apps gathered spatial and interaction data. Prototype development involved AR-based experiences that layered digital prompts across cityscapes. Spatial computing tools enabled contextual responses based on user movement and environment. User testing was conducted with diverse commuters to capture feedback on engagement, clarity, and interaction depth. Insights from these sessions refined design decisions and interaction strategies. This iterative approach, grounded in real-time data and user behavior, supported the creation of an adaptive, responsive commuting experience.
-
                         </p>
                     </div>
                 </div>
-
+            </div>
             <br>                       
 
+        <!-- <Gaze Tracker> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Gaze Tracker</h3>
                 <p class="project-subtitle">Mapping and Shaping Attention during OBLIVIAN</p>
                 <p class="project-faculty">
@@ -563,9 +616,16 @@
                         <p class="project-description">Gaze Tracker uses computer vision to detect head position and gaze direction via mobile cameras. A 3x3 visual grid categorizes focus zones in real time, while optimized algorithms ensure smooth mobile performance. Notifications gently prompt users to redirect gaze when prolonged downward focus is detected. The app logs attention data, providing users with feedback on their visual habits. Behavioral analytics track long-term patterns, encouraging awareness shifts over time. All components are designed for minimal intrusiveness and energy use, combining spatial sensing with meaningful interaction. The result is a mobile system that subtly reshapes how users engage with the city around them.</p>
                     </div>
                 </div>    
+            </div>    
+
         </section>
         
         <section id="architecture" class="scroll-section">
+
+            <br>
+
+
+        <!-- <Familial Housing> -->
             <div class="work-item">
                 <hr>
                 <h3 class="project-title">Familial Housing</h3>
@@ -623,9 +683,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <High Performance Center> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">High Performance Center</h3>
                 <p class="project-subtitle">By Chennai Super Kings from Indian Premier League</p>
                 <p class="project-faculty">
@@ -682,9 +743,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <In transit Hub> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">In transit Hub</h3>
                 <p class="project-subtitle">Reinvigorating short term housing</p>
                 <p class="project-faculty">
@@ -741,9 +803,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <Administration Building> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Administration Building</h3>
                 <p class="project-subtitle">Dalmia Polypro PET Recycling Plant Corporate Office</p>
                 <p class="project-faculty">Collaborators_Sameep Padora and Associates (sP+a)
@@ -800,9 +863,10 @@
                     </div>
                 </div>
             </div>
-
+            <br>
+            
+        <!-- <Multi-Functional Entrance block> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Multi-Functional Entrance block</h3>
                 <p class="project-subtitle">Dalmia Polypro PET Recycling Plant</p>
                 <p class="project-faculty">Sameep Padora and Associates(sP+a)
@@ -856,14 +920,11 @@
                         <p class="project-description">The process began with contextual analysis to understand how the boundary wall and adjacent road network defined the site's edge. Spatial planning evolved through sectional studies and 3D modelling in Rhino, focusing on inserting courtyards between function-specific blocks. Load-bearing masonry walls and light roof sections were optimized for daylight using splayed opening simulations. Passive cooling, material tactility, and seamless circulation were key drivers. Grasshopper was used to refine arch geometries and window splay angles, ensuring natural light without compromising privacy. Each decision was grounded in the material character of stone, brick, and steel—balancing robustness with spatial delicacy.</p>
                     </div>
                 </div>
-            </div>
+            </div> 
+            <br>
 
-            
-
-            
-
+        <!-- <Eating Space> -->
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Eating Space</h3>
                 <p class="project-subtitle">Dalmia Polypro PET Recycling Plant</p>
                 <p class="project-faculty">Sameep Padora and Associates(sP+a)
@@ -918,9 +979,10 @@
                     </div>
                 </div>
             </div>
-            
+            <br>
+
+        <!-- <Discrete Construction> -->            
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Discrete Construction</h3>
                 <p class="project-subtitle">Modular Structural System in Family-Specific Customizable Housing</p>
                 <p class="project-faculty">
@@ -974,10 +1036,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
-
+        <!-- <Lokal Parklet> -->      
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Lokal Parklet</h3>
                 <p class="project-subtitle">An Outdoor Restaurant Extension Framing Skyline and Shade</p>
                 <p class="project-faculty">
@@ -1032,9 +1094,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <House of Warp & Weft> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">House of Warp & Weft</h3>
                 <p class="project-subtitle">Reimagining Tradition through Recreation, Learning & Living in Kohima</p>
                 <p class="project-faculty">
@@ -1091,9 +1154,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <Objects.Institutions.Identities> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Objects.Institutions.Identities</h3>
                 <p class="project-subtitle">Kohima study trip documentation</p>
                 <p class="project-faculty">
@@ -1152,9 +1216,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <Vertical Village> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Vertical Village</h3>
                 <p class="project-subtitle">Exploring the Realm of Urban Rurality Housing</p>
                 <p class="project-faculty">
@@ -1213,9 +1278,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <Membrum Vestigial> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Membrum Vestigial</h3>
                 <p class="project-subtitle">Karigari Workers Co-op Association</p>
                 <p class="project-faculty">
@@ -1276,11 +1342,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
-
-
+        <!-- <Bari in Coexistence> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Bari in Coexistence</h3>
                 <p class="project-subtitle">Rehabilitation for the Sundarbans houses</p>
                 <p class="project-faculty">
@@ -1335,12 +1400,11 @@
                         </div>
                         <p class="project-description">The design was developed through site-responsive analysis and technical prototyping for floating resilience. Calculations of live, dead, and environmental loads informed the use of 88 airtight 200-liter plastic barrels beneath the bamboo raft foundation, enabling safe vertical lift. The form draws from radial geometry, distributing wind loads and facilitating airflow. CAD modeling, iterative sectional studies, and environmental simulation tools were employed to test light, ventilation, and buoyancy. Local construction techniques were integrated using sustainable materials, while flexible programming enabled a dual-block layout for domestic and productive functions—linked by circulation paths that encourage daily interaction and community cohesion.</p>                   </div>
                     </div>
-                </div>
             </div>
+            <br>
 
-
+        <!-- <Sangam Gully> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Sangam Gully</h3>
                 <p class="project-subtitle">Using the OLD to create NEW</p>
                 <p class="project-faculty">
@@ -1397,9 +1461,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <Fragments of Sidhpur History> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Fragments of Sidhpur History</h3>
                 <p class="project-subtitle">Sidhpur study trip documentation</p>
                 <p class="project-faculty">
@@ -1455,9 +1520,10 @@
                     </div>
                 </div>
             </div>
+            <br>
 
+        <!-- <Fly-Man-Go> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Fly-Man-Go</h3>
                 <p class="project-subtitle">Trail through all encompassing experience</p>
                 <p class="project-faculty">
@@ -1514,10 +1580,11 @@
                         <p class="project-description">The design evolved through biomimetic analysis, wildlife behavior mapping, and experiential zoning. Inspired by avian anatomy and movement, forms were developed via sketches, physical models, and parametric tools. Detailed site studies and programmatic overlays shaped three cabin typologies across different immersion levels. Structural systems were resolved using profiling techniques for slender, expressive frames. Sustainable material research guided eco-sensitive choices, while spatial sequencing was informed by habitat transitions and wildlife pathways. The use of sectional design thinking, nature-derived form generation, and modular scalability ensured a dynamic, responsive architectural language integrated into both the natural terrain and the visitor's journey.</p>
                     </div>
                 </div>
-            </div>            
+            </div>       
+            <br>
 
+        <!-- <Decoding Frie Otto> -->   
             <div class="work-item">
-                <hr>
                 <h3 class="project-title">Decoding Frie Otto</h3>
                 <p class="project-subtitle">Tensile & Pneumatic Structure</p>
                 <p class="project-faculty">
@@ -1570,7 +1637,8 @@
                         <p class="project-description">The process began with soap film experiments using thread networks and bamboo sticks to extract catenary geometries. These were interpreted into thread-filled wireframe cubes that acted as modular tension elements. Once composed, the unified form was reinforced with PVC tubes, custom laser-cut discs, and stitched fabric membranes. Rhino 3D was used to model the entire structure digitally, translating it into fabrication files. The team used laser cutting and 3D printing for precision components, while tension cloth was hand-stitched on-site. The final structure stood as a physical testament to pneumatic principles, built at 1:5 scale.</p>
                     </div>
                 </div>
-            </div>     
+            </div>
+
         </section>
     </main>
     <hr>

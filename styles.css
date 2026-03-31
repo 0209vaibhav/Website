@@ -1501,7 +1501,7 @@ nav ul li {
   position: absolute;
   left: 0;
   top: 0;
-  user-drag: none;
+  -webkit-user-drag: none;
   user-select: none;
   pointer-events: none;
   transform-origin: 0 0;
