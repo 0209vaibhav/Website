@@ -1333,6 +1333,33 @@ nav ul li {
     text-align: justify;
 }
 
+.nda-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 180px;
+  margin: 0 auto 24px auto;
+  background: #f7f7f7;
+  border-radius: 8px;
+  border: 1.5px dashed #c0c0c0;
+  color: #888;
+}
+
+.nda-icon {
+  font-size: 2rem;
+  color: #aaa;
+}
+
+.nda-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #999;
+}
+
 .spread-carousel {
   position: relative;
   display: flex;

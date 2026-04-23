@@ -8,10 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     initializeNavSubmenus();
 
     // Familial Housing project spread carousel
-    const spreadsIbex = Array.from({length: 29}, (_, i) => 
-        `Data/Works/Computation/Ibex/${i + 1}.jpg`
-    );
-    
     const spreadsFamilial = [
         "Data/Works/Architecture/Familial Housing/cover.png",
         "Data/Works/Architecture/Familial Housing/Page 0.png",
@@ -202,7 +198,6 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     let currentSpread = 0;
-    let currentSpreadIbex = 0;
     let currentSpreadBari = 0;
     let currentSpreadFrie = 0;
     let currentSpreadDiscrete = 0;
@@ -222,7 +217,6 @@ document.addEventListener("DOMContentLoaded", function() {
     let activeProject = 'admin'; // Track which project is currently in fullscreen
 
     const spreadImg = document.getElementById("spread-image");
-    const spreadImgIbex = document.getElementById("spread-image-ibex");
     const spreadImgBari = document.getElementById("spread-image-bari");
     const spreadImgFrie = document.getElementById("spread-image-frie");
     const spreadImgDiscrete = document.getElementById("spread-image-discrete");
@@ -241,7 +235,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const spreadImgVertical = document.getElementById("spread-image-vertical");
     
     // Find buttons by looking for the closest spread-carousel container
-    const ibexCarousel = spreadImgIbex?.closest('.spread-carousel');
     const adminCarousel = spreadImg?.closest('.spread-carousel');
     const bariCarousel = spreadImgBari?.closest('.spread-carousel');
     const frieCarousel = spreadImgFrie?.closest('.spread-carousel');
@@ -261,10 +254,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const verticalCarousel = spreadImgVertical?.closest('.spread-carousel');
     
     // Get buttons from each carousel
-
-    const prevBtnIbex = ibexCarousel?.querySelector(".prev-btn");
-    const nextBtnIbex = ibexCarousel?.querySelector(".next-btn");
-    const fullscreenBtnIbex = ibexCarousel?.querySelector(".fullscreen-btn");
 
     const prevBtn = adminCarousel?.querySelector(".prev-btn");
     const nextBtn = adminCarousel?.querySelector(".next-btn");
@@ -402,9 +391,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (spreadImgVertical) spreadImgVertical.src = spreadsVertical[currentSpreadVertical];
     }
 
-    function updateSpreadImageIbex() {
-        if (spreadImgIbex) spreadImgIbex.src = spreadsIbex[currentSpreadIbex];
-    }
 
     if (prevBtn && nextBtn && spreadImg) {
         prevBtn.addEventListener("click", function() {
@@ -609,16 +595,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    if (prevBtnIbex && nextBtnIbex && spreadImgIbex) {
-        prevBtnIbex.addEventListener("click", function() {
-            currentSpreadIbex = (currentSpreadIbex - 1 + spreadsIbex.length) % spreadsIbex.length;
-            updateSpreadImageIbex();
-        });
-        nextBtnIbex.addEventListener("click", function() {
-            currentSpreadIbex = (currentSpreadIbex + 1) % spreadsIbex.length;
-            updateSpreadImageIbex();
-        });
-    }
+
 
     // Modal logic for fullscreen spreads
     const modal = document.getElementById("spread-modal");
@@ -949,19 +926,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    if (fullscreenBtnIbex) {
-        fullscreenBtnIbex.addEventListener("click", function(e) {
-            e.preventDefault();
-            if (modal && modalImg) {
-                activeProject = 'ibex';
-                modal.classList.add("open");
-                modalImg.src = spreadsIbex[currentSpreadIbex];
-                if (modal.requestFullscreen) modal.requestFullscreen();
-                else if (modal.webkitRequestFullscreen) modal.webkitRequestFullscreen();
-                else if (modal.msRequestFullscreen) modal.msRequestFullscreen();
-            }
-        });
-    }
 
     // Modal navigation
     if (modalPrev && modalNext && modalImg) {
@@ -1018,11 +982,8 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if (activeProject === 'vertical') {
                 currentSpreadVertical = (currentSpreadVertical - 1 + spreadsVertical.length) % spreadsVertical.length;
                 modalImg.src = spreadsVertical[currentSpreadVertical];
-            } else if (activeProject === 'ibex') {
-                currentSpreadIbex = (currentSpreadIbex - 1 + spreadsIbex.length) % spreadsIbex.length;
-                modalImg.src = spreadsIbex[currentSpreadIbex];
             }
-            
+
             updateMagnifierImage();
         });
         modalNext.addEventListener("click", function(e) {
@@ -1078,9 +1039,6 @@ document.addEventListener("DOMContentLoaded", function() {
             } else if (activeProject === 'vertical') {
                 currentSpreadVertical = (currentSpreadVertical + 1) % spreadsVertical.length;
                 modalImg.src = spreadsVertical[currentSpreadVertical];
-            } else if (activeProject === 'ibex') {
-                currentSpreadIbex = (currentSpreadIbex + 1) % spreadsIbex.length;
-                modalImg.src = spreadsIbex[currentSpreadIbex];
             }
             updateMagnifierImage();
         });
