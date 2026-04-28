@@ -1434,6 +1434,37 @@ nav ul li {
   color: #999;
 }
 
+/* NDA overlay on carousel */
+.nda-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.nda-overlay-icon {
+    font-size: 0.75rem;
+    opacity: 0.85;
+}
+
+.nda-overlay-label {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
 .spread-carousel {
   position: relative;
   display: flex;
