@@ -13,6 +13,12 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => row.classList.add('visible'), 300 + i * 80);
     });
 
+    // IBEX carousel (NDA — limited preview images)
+    const spreadsIbex = [
+        "Data/Works/Computation/Ibex/1.jpg",
+        "Data/Works/Computation/Ibex/2.jpg"
+    ];
+
     // Familial Housing project spread carousel
     const spreadsFamilial = [
         "Data/Works/Architecture/Familial Housing/cover.png",
@@ -204,6 +210,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     let currentSpread = 0;
+    let currentSpreadIbex = 0;
     let currentSpreadBari = 0;
     let currentSpreadFrie = 0;
     let currentSpreadDiscrete = 0;
@@ -223,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let activeProject = 'admin'; // Track which project is currently in fullscreen
 
     const spreadImg = document.getElementById("spread-image");
+    const spreadImgIbex = document.getElementById("spread-image-ibex");
     const spreadImgBari = document.getElementById("spread-image-bari");
     const spreadImgFrie = document.getElementById("spread-image-frie");
     const spreadImgDiscrete = document.getElementById("spread-image-discrete");
@@ -242,6 +250,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     // Find buttons by looking for the closest spread-carousel container
     const adminCarousel = spreadImg?.closest('.spread-carousel');
+    const ibexCarousel = spreadImgIbex?.closest('.spread-carousel');
     const bariCarousel = spreadImgBari?.closest('.spread-carousel');
     const frieCarousel = spreadImgFrie?.closest('.spread-carousel');
     const discreteCarousel = spreadImgDiscrete?.closest('.spread-carousel');
@@ -264,7 +273,11 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevBtn = adminCarousel?.querySelector(".prev-btn");
     const nextBtn = adminCarousel?.querySelector(".next-btn");
     const fullscreenBtn = adminCarousel?.querySelector(".fullscreen-btn");
-    
+
+    const prevBtnIbex = ibexCarousel?.querySelector(".prev-btn");
+    const nextBtnIbex = ibexCarousel?.querySelector(".next-btn");
+    const fullscreenBtnIbex = ibexCarousel?.querySelector(".fullscreen-btn");
+
     const prevBtnBari = bariCarousel?.querySelector(".prev-btn");
     const nextBtnBari = bariCarousel?.querySelector(".next-btn");
     const fullscreenBtnBari = bariCarousel?.querySelector(".fullscreen-btn");
@@ -333,6 +346,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (spreadImg) spreadImg.src = spreads[currentSpread];
     }
     
+    function updateSpreadImageIbex() {
+        if (spreadImgIbex) spreadImgIbex.src = spreadsIbex[currentSpreadIbex];
+    }
+
     function updateSpreadImageBari() {
         if (spreadImgBari) spreadImgBari.src = spreadsBari[currentSpreadBari];
     }
@@ -406,6 +423,18 @@ document.addEventListener("DOMContentLoaded", function() {
         nextBtn.addEventListener("click", function() {
             currentSpread = (currentSpread + 1) % spreads.length;
             updateSpreadImage();
+        });
+    }
+
+    // IBEX carousel navigation
+    if (prevBtnIbex && nextBtnIbex && spreadImgIbex) {
+        prevBtnIbex.addEventListener("click", function() {
+            currentSpreadIbex = (currentSpreadIbex - 1 + spreadsIbex.length) % spreadsIbex.length;
+            updateSpreadImageIbex();
+        });
+        nextBtnIbex.addEventListener("click", function() {
+            currentSpreadIbex = (currentSpreadIbex + 1) % spreadsIbex.length;
+            updateSpreadImageIbex();
         });
     }
 
@@ -638,6 +667,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else if (modal.msRequestFullscreen) {
                     modal.msRequestFullscreen();
                 }
+            }
+        });
+    }
+
+    // IBEX fullscreen button
+    if (fullscreenBtnIbex) {
+        fullscreenBtnIbex.addEventListener("click", function(e) {
+            e.preventDefault();
+            if (modal && modalImg) {
+                activeProject = 'ibex';
+                modal.classList.add("open");
+                modalImg.src = spreadsIbex[currentSpreadIbex];
+                if (modal.requestFullscreen) modal.requestFullscreen();
+                else if (modal.webkitRequestFullscreen) modal.webkitRequestFullscreen();
+                else if (modal.msRequestFullscreen) modal.msRequestFullscreen();
             }
         });
     }
@@ -940,6 +984,9 @@ document.addEventListener("DOMContentLoaded", function() {
             if (activeProject === 'admin') {
                 currentSpread = (currentSpread - 1 + spreads.length) % spreads.length;
                 modalImg.src = spreads[currentSpread];
+            } else if (activeProject === 'ibex') {
+                currentSpreadIbex = (currentSpreadIbex - 1 + spreadsIbex.length) % spreadsIbex.length;
+                modalImg.src = spreadsIbex[currentSpreadIbex];
             } else if (activeProject === 'bari') {
                 currentSpreadBari = (currentSpreadBari - 1 + spreadsBari.length) % spreadsBari.length;
                 modalImg.src = spreadsBari[currentSpreadBari];
@@ -997,6 +1044,9 @@ document.addEventListener("DOMContentLoaded", function() {
             if (activeProject === 'admin') {
                 currentSpread = (currentSpread + 1) % spreads.length;
                 modalImg.src = spreads[currentSpread];
+            } else if (activeProject === 'ibex') {
+                currentSpreadIbex = (currentSpreadIbex + 1) % spreadsIbex.length;
+                modalImg.src = spreadsIbex[currentSpreadIbex];
             } else if (activeProject === 'bari') {
                 currentSpreadBari = (currentSpreadBari + 1) % spreadsBari.length;
                 modalImg.src = spreadsBari[currentSpreadBari];
