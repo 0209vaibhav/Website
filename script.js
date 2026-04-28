@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
     initializeScrollNavigation();
     initializeNavSubmenus();
 
+    // Timeline rows — staggered fade-in on page load
+    const timelineRows = document.querySelectorAll('.timeline-row');
+    timelineRows.forEach((row, i) => {
+        setTimeout(() => row.classList.add('visible'), 300 + i * 80);
+    });
+
     // Familial Housing project spread carousel
     const spreadsFamilial = [
         "Data/Works/Architecture/Familial Housing/cover.png",
