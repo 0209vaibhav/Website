@@ -13,16 +13,20 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => row.classList.add('visible'), 300 + i * 80);
     });
 
-    // IBEX carousel (NDA — limited preview images)
+    // IBEX carousel
     const spreadsIbex = [
-        "Data/Works/Computation/Ibex/1.jpg",
-        "Data/Works/Computation/Ibex/2.jpg"
+        "Data/Works/Computation/Ibex/cover.png",
+        "Data/Works/Computation/Ibex/Page 02.png",
+        "Data/Works/Computation/Ibex/Page 03.png",
+        "Data/Works/Computation/Ibex/Page 04.png",
+        "Data/Works/Computation/Ibex/Page 05.png",
+        "Data/Works/Computation/Ibex/Page 06.png",
+        "Data/Works/Computation/Ibex/Page 07.png"
     ];
 
     // Familial Housing project spread carousel
     const spreadsFamilial = [
         "Data/Works/Architecture/Familial Housing/cover.png",
-        "Data/Works/Architecture/Familial Housing/Page 0.png",
         "Data/Works/Architecture/Familial Housing/Page 02.png",
         "Data/Works/Architecture/Familial Housing/Page 03.png",
         "Data/Works/Architecture/Familial Housing/Page 04.png",
@@ -52,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // High Performance Center project spread carousel
     const spreadsHPC = [
         "Data/Works/Architecture/High Performance Center/cover.png",
-        "Data/Works/Architecture/High Performance Center/Page 0.png",
         "Data/Works/Architecture/High Performance Center/Page 02.png",
         "Data/Works/Architecture/High Performance Center/Page 03.png",
         "Data/Works/Architecture/High Performance Center/Page 04.png",
@@ -67,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // In transit Hub project spread carousel
     const spreadsTransit = [
         "Data/Works/Architecture/In transit Hub/cover.png",
-        "Data/Works/Architecture/In transit Hub/Page 0.png",
         "Data/Works/Architecture/In transit Hub/Page 02.png",
         "Data/Works/Architecture/In transit Hub/Page 03.png",
         "Data/Works/Architecture/In transit Hub/Page 04.png",
@@ -80,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Architecture project spread carousel
     const spreads = [
         "Data/Works/Architecture/Administration building/cover.png",
-        "Data/Works/Architecture/Administration building/Page 01.png",
         "Data/Works/Architecture/Administration building/Page 02.png",
         "Data/Works/Architecture/Administration building/Page 03.png",
         "Data/Works/Architecture/Administration building/Page 04.png",
@@ -88,13 +89,14 @@ document.addEventListener("DOMContentLoaded", function() {
         "Data/Works/Architecture/Administration building/Page 06.png",
         "Data/Works/Architecture/Administration building/Page 07.png",
         "Data/Works/Architecture/Administration building/Page 08.png",
-        "Data/Works/Architecture/Administration building/Page 09.png"
+        "Data/Works/Architecture/Administration building/Page 09.png",
+        "Data/Works/Architecture/Administration building/Page 10.png",
+        "Data/Works/Architecture/Administration building/Page 11.png"
     ];
 
     // Multi-Functional Entrance block project spread carousel
     const spreadsMultifunc = [
         "Data/Works/Architecture/Multi-Functional Entrance block/cover.png",
-        "Data/Works/Architecture/Multi-Functional Entrance block/Page 0.png",
         "Data/Works/Architecture/Multi-Functional Entrance block/Page 02.png",
         "Data/Works/Architecture/Multi-Functional Entrance block/Page 03.png"
     ];
@@ -102,14 +104,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Eating Space project spread carousel
     const spreadsEating = [
         "Data/Works/Architecture/Eating space/cover.png",
-        "Data/Works/Architecture/Eating space/Page 0.png",
         "Data/Works/Architecture/Eating space/Page 02.png"
     ];
 
     // Discrete Construction project spread carousel
     const spreadsDiscrete = [
         "Data/Works/Architecture/Discrete Construction/cover.png",
-        "Data/Works/Architecture/Discrete Construction/Page 0.png",
         "Data/Works/Architecture/Discrete Construction/Page 02.png",
         "Data/Works/Architecture/Discrete Construction/Page 03.png"
     ];
@@ -117,7 +117,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Lokal Parklet project spread carousel
     const spreadsLokal = [
         "Data/Works/Architecture/Lokal Parklet/cover.png",
-        "Data/Works/Architecture/Lokal Parklet/Page 0.png",
         "Data/Works/Architecture/Lokal Parklet/Page 02.png",
         "Data/Works/Architecture/Lokal Parklet/Page 03.png",
         "Data/Works/Architecture/Lokal Parklet/Page 04.png",
@@ -127,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // House of Warp & Weft project spread carousel
     const spreadsWarpWeft = [
         "Data/Works/Architecture/House of Warp & Weft/cover.png",
-        "Data/Works/Architecture/House of Warp & Weft/Page 0.png",
         "Data/Works/Architecture/House of Warp & Weft/Page 02.png",
         "Data/Works/Architecture/House of Warp & Weft/Page 03.png",
         "Data/Works/Architecture/House of Warp & Weft/Page 04.png",
@@ -138,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Objects.Institutions.Identities project spread carousel
     const spreadsObjects = [
         "Data/Works/Architecture/Objects.Institutions.Identities/cover.png",
-        "Data/Works/Architecture/Objects.Institutions.Identities/Page 0.png",
         "Data/Works/Architecture/Objects.Institutions.Identities/Page 02.png",
         "Data/Works/Architecture/Objects.Institutions.Identities/Page 03.png",
         "Data/Works/Architecture/Objects.Institutions.Identities/Page 04.png"
@@ -147,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Vertical Village project spread carousel
     const spreadsVertical = [
         "Data/Works/Architecture/Vertical Village/cover.png",
-        "Data/Works/Architecture/Vertical Village/Page 0.png",
         "Data/Works/Architecture/Vertical Village/Page 02.png",
         "Data/Works/Architecture/Vertical Village/Page 03.png",
         "Data/Works/Architecture/Vertical Village/Page 04.png",
@@ -159,7 +155,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Membrum Vestigial project spread carousel
     const spreadsMembrum = [
         "Data/Works/Architecture/Membrum Vestigial/cover.png",
-        "Data/Works/Architecture/Membrum Vestigial/Page 0.png",
         "Data/Works/Architecture/Membrum Vestigial/Page 02.png",
         "Data/Works/Architecture/Membrum Vestigial/Page 03.png",
         "Data/Works/Architecture/Membrum Vestigial/Page 04.png",
@@ -170,7 +165,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Bari in Coexistence project spread carousel
     const spreadsBari = [
         "Data/Works/Architecture/Bari in Coexistence/cover.png",
-        "Data/Works/Architecture/Bari in Coexistence/Page 0.png",
         "Data/Works/Architecture/Bari in Coexistence/Page 02.png",
         "Data/Works/Architecture/Bari in Coexistence/Page 03.png",
         "Data/Works/Architecture/Bari in Coexistence/Page 04.png"
@@ -179,7 +173,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Sangam Gully project spread carousel
     const spreadsSangam = [
         "Data/Works/Architecture/Sangam Gully/cover.png",
-        "Data/Works/Architecture/Sangam Gully/Page 0.png",
         "Data/Works/Architecture/Sangam Gully/Page 02.png",
         "Data/Works/Architecture/Sangam Gully/Page 03.png",
         "Data/Works/Architecture/Sangam Gully/Page 04.png",
@@ -189,14 +182,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Fragments of Sidhpur History project spread carousel
     const spreadsSidhpur = [
         "Data/Works/Architecture/Fragments of Sidhpur History/cover.png",
-        "Data/Works/Architecture/Fragments of Sidhpur History/Page 0.png",
         "Data/Works/Architecture/Fragments of Sidhpur History/Page 02.png"
     ];
 
     // Fly-Man-Go project spread carousel
     const spreadsFly = [
         "Data/Works/Architecture/Fly-Man-Go/cover.png",
-        "Data/Works/Architecture/Fly-Man-Go/Page 0.png",
         "Data/Works/Architecture/Fly-Man-Go/Page 02.png",
         "Data/Works/Architecture/Fly-Man-Go/Page 03.png",
         "Data/Works/Architecture/Fly-Man-Go/Page 04.png"
@@ -205,7 +196,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Decoding Frie Otto project spread carousel
     const spreadsFrie = [
         "Data/Works/Architecture/Decoding Frie Otto/cover.png",
-        "Data/Works/Architecture/Decoding Frie Otto/Page 0.png",
         "Data/Works/Architecture/Decoding Frie Otto/Page 02.png"
     ];
 

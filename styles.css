@@ -1434,6 +1434,20 @@ nav ul li {
   color: #999;
 }
 
+.nda-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #999;
+    font-style: italic;
+    margin-top: 4px;
+}
+
+.nda-note .fa-lock {
+    font-size: 10px;
+}
+
 /* NDA overlay on carousel */
 .nda-overlay {
     position: absolute;
