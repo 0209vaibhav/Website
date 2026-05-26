@@ -3,9 +3,12 @@ document.addEventListener("DOMContentLoaded", function() {
     // Load mindmap
     loadMindMap();
     
-    // Initialize scroll-based navigation
-    initializeScrollNavigation();
+    // Reorder project cards so body order matches nav category order
+    reorderProjectsByNavigationOrder();
+
+    // Populate submenus and project anchors before scroll navigation
     initializeNavSubmenus();
+    initializeScrollNavigation();
 
     // Timeline rows — staggered fade-in on page load
     const timelineRows = document.querySelectorAll('.timeline-row');
@@ -1204,6 +1207,82 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 // Helper functions for navigation
+const NAV_CATEGORIES = {
+    'creative-technology': [
+        'MEMENTO',
+        'ML in MEMENTO',
+        'The Urban Fringe',
+        'Campaign Universe',
+        'Constellation of Making',
+        'Hue Knew',
+        'Oblivian to Odyssey',
+        'Gaze Tracker'
+    ],
+    'computation-design': [
+        'IBEX',
+        'Administration Building',
+        'High Performance Center',
+        'Studio In Flux',
+        'BENTO',
+        'Urban Computing',
+        'LayoutLab'
+    ],
+    'architecture': [
+        'Familial Housing',
+        'In transit Hub',
+        'Multi-Functional Entrance block',
+        'Eating Space',
+        'Discrete Construction',
+        'Lokal Parklet',
+        'House of Warp & Weft',
+        'Objects.Institutions.Identities',
+        'Vertical Village',
+        'Membrum Vestigial',
+        'Bari in Coexistence',
+        'Sangam Gully',
+        'Fragments of Sidhpur History',
+        'Fly-Man-Go',
+        'Decoding Frie Otto'
+    ]
+};
+
+function getCategoryForTitle(title) {
+    for (const [category, titles] of Object.entries(NAV_CATEGORIES)) {
+        if (titles.includes(title)) return category;
+    }
+    return null;
+}
+
+function reorderProjectsByNavigationOrder() {
+    const sectionsByCategory = {
+        'creative-technology': 'computation',
+        'computation-design': 'computation',
+        'architecture': 'architecture'
+    };
+
+    const titleToWorkItem = new Map();
+    document.querySelectorAll('h3.project-title').forEach((titleEl) => {
+        const title = titleEl.textContent.trim();
+        const workItem = titleEl.closest('.work-item');
+        if (workItem) {
+            titleToWorkItem.set(title, workItem);
+        }
+    });
+
+    Object.entries(NAV_CATEGORIES).forEach(([category, titles]) => {
+        const targetSectionId = sectionsByCategory[category];
+        const targetSection = document.getElementById(targetSectionId);
+        if (!targetSection) return;
+
+        titles.forEach((title) => {
+            const workItem = titleToWorkItem.get(title);
+            if (workItem) {
+                targetSection.appendChild(workItem);
+            }
+        });
+    });
+}
+
 function slugify(text) {
     return text
         .toString()
@@ -1230,15 +1309,25 @@ function ensureProjectAnchors(sectionId) {
 
 function populateSubmenu(ul, sectionId) {
     ul.innerHTML = '';
-    let items = [];
-    if (sectionId === 'computation' || sectionId === 'architecture') {
-        items = ensureProjectAnchors(sectionId);
-    }
-    items.forEach(({ id, title }) => {
+
+    // Collect all existing project anchors from both sections.
+    // Submenus are then populated by filtering to your desired categories.
+    const computationItems = ensureProjectAnchors('computation');
+    const architectureItems = ensureProjectAnchors('architecture');
+    const allItems = [...computationItems, ...architectureItems];
+    const itemByTitle = new Map(allItems.map(item => [item.title, item]));
+
+    const desiredTitles = NAV_CATEGORIES[sectionId] || [];
+
+    desiredTitles.forEach((title) => {
+        const match = itemByTitle.get(title);
+        if (!match) return;
+
+        const { id, title: resolvedTitle } = match;
         const li = document.createElement('li');
         const a = document.createElement('a');
         a.href = `#${id}`;
-        a.textContent = title;
+        a.textContent = resolvedTitle;
         a.setAttribute('data-project-id', id);
         a.addEventListener('click', (e) => {
             e.preventDefault();
@@ -1275,110 +1364,75 @@ function clearProjectHighlighting() {
 }
 
 function initializeNavSubmenus() {
-    const navItems = document.querySelectorAll('nav ul > li');
+    const navItems = document.querySelectorAll('nav > ul > li');
 
-    // Close all submenus helper
     function closeAll() {
         document.querySelectorAll('.submenu').forEach(ul => ul.classList.remove('open'));
         document.querySelectorAll('.nav-arrow').forEach(ar => ar.classList.remove('open'));
     }
 
+    function openSubmenu(submenu, arrow) {
+        if (!submenu || !arrow) return;
+        const sectionId = submenu.getAttribute('data-section');
+        populateSubmenu(submenu, sectionId);
+        submenu.classList.add('open');
+        arrow.classList.add('open');
+    }
+
+    // Pre-populate all submenus so project links are always available
+    document.querySelectorAll('.submenu[data-section]').forEach((submenu) => {
+        populateSubmenu(submenu, submenu.getAttribute('data-section'));
+    });
+
     navItems.forEach((li) => {
-        const link = li.querySelector('a');
+        const link = li.querySelector(':scope > a');
         const arrow = li.querySelector('.nav-arrow');
         const submenu = li.querySelector('.submenu');
         if (!link || !arrow || !submenu) return;
 
-        const sectionId = submenu.getAttribute('data-section');
-
-        // Populate once on first open
-        let populated = false;
         arrow.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
             const isOpen = submenu.classList.contains('open');
             closeAll();
             if (!isOpen) {
-                if (!populated) {
-                    populateSubmenu(submenu, sectionId);
-                    populated = true;
-                }
-                submenu.classList.add('open');
-                arrow.classList.add('open');
+                openSubmenu(submenu, arrow);
             }
         });
     });
+
+    window.closeNavSubmenus = closeAll;
+    window.openNavSubmenu = openSubmenu;
 }
 
 
 function initializeScrollNavigation() {
-    const sections = document.querySelectorAll('.scroll-section');
-    const navLinks = document.querySelectorAll('nav ul li a');
+    const topNavLinks = document.querySelectorAll('nav > ul > li > a');
+    let currentActiveNav = null;
     
-    console.log('=== NAVIGATION DEBUG ===');
-    console.log('Sections found:', sections.length);
-    console.log('Nav links found:', navLinks.length);
-    
-    // Log all sections
-    sections.forEach((section, index) => {
-        console.log(`Section ${index}: ${section.id}`);
-    });
-    
-    // Create a map of section IDs to their corresponding nav links
-    const sectionToNavMap = new Map();
-    sections.forEach(section => {
-        const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`nav ul li a[href="#${sectionId}"]`);
-        if (navLink) {
-            sectionToNavMap.set(sectionId, navLink);
-            console.log(`Mapped section ${sectionId} to nav link`);
+    function setActiveNav(navKey, options = {}) {
+        const { openSubmenu = false } = options;
+
+        topNavLinks.forEach(link => link.classList.remove('active-link'));
+
+        let navLink = null;
+        if (navKey === 'about') {
+            navLink = document.querySelector('nav > ul > li > a[href="#about"]');
         } else {
-            console.warn(`No nav link found for section ${sectionId}`);
+            navLink = document.querySelector(`nav > ul > li > a[data-nav-category="${navKey}"]`);
         }
-    });
-    
-    let currentActiveSection = null;
-    
-    // Simple function to set active navigation
-    function setActiveNav(sectionId) {
-        console.log(`Attempting to set active nav to: ${sectionId}`);
-        
-        // Remove active class from all links
-        navLinks.forEach(link => {
-            link.classList.remove('active-link');
-            console.log(`Removed active-link from ${link.getAttribute('href')}`);
-        });
-    
-        // Add active class to the correct link
-        const navLink = sectionToNavMap.get(sectionId);
-        if (navLink) {
-            navLink.classList.add('active-link');
-            currentActiveSection = sectionId;
-            console.log(`✅ Successfully activated ${sectionId} navigation`);
-            
-            // Handle submenu expansion/collapse
+
+        if (!navLink) return;
+
+        navLink.classList.add('active-link');
+        currentActiveNav = navKey;
+
+        if (openSubmenu && navKey !== 'about') {
+            if (window.closeNavSubmenus) window.closeNavSubmenus();
             const navItem = navLink.closest('li');
             const submenu = navItem ? navItem.querySelector('.submenu') : null;
             const arrow = navItem ? navItem.querySelector('.nav-arrow') : null;
-            
-            // Close all submenus first
-            document.querySelectorAll('.submenu').forEach(ul => ul.classList.remove('open'));
-            document.querySelectorAll('.nav-arrow').forEach(ar => ar.classList.remove('open'));
-            
-            // Only expand submenu if it's computation or architecture
-            if (submenu && arrow) {
-                const sectionId = submenu.getAttribute('data-section');
-                if (sectionId === 'computation' || sectionId === 'architecture') {
-                    populateSubmenu(submenu, sectionId);
-                    submenu.classList.add('open');
-                    arrow.classList.add('open');
-                }
-            }
-            
-            // Verify it was added
-            console.log(`${sectionId} link has active-link class:`, navLink.classList.contains('active-link'));
-        } else {
-            console.warn(`❌ No nav link found for section ${sectionId}`);
+            if (window.openNavSubmenu) window.openNavSubmenu(submenu, arrow);
         }
     }
     
@@ -1402,72 +1456,35 @@ function initializeScrollNavigation() {
             }
         });
         
-        // If we found a project, handle it
         if (activeProject) {
-            const section = activeProject.closest('.scroll-section');
-            if (section) {
-                const sectionId = section.id;
-                const projectTitle = activeProject.textContent.trim();
-                
-                // Ensure project has an ID
-                if (!activeProject.id) {
-                    const projectId = 'proj-' + slugify(projectTitle);
-                    activeProject.id = projectId;
-                }
-                
-                const projectId = activeProject.id;
-                
-                // Set active section
-                if (currentActiveSection !== sectionId) {
-                    setActiveNav(sectionId);
-                }
-                
-                // Highlight the project in submenu
-                highlightProjectInSubmenu(projectId, projectTitle);
-                return;
+            const projectTitle = activeProject.textContent.trim();
+
+            if (!activeProject.id) {
+                activeProject.id = 'proj-' + slugify(projectTitle);
             }
-        }
-        
-        // No project found, check sections
-        const aboutSection = document.getElementById('about');
-        const computationSection = document.getElementById('computation');
-        const architectureSection = document.getElementById('architecture');
-        
-        if (!aboutSection || !computationSection || !architectureSection) {
+
+            const projectId = activeProject.id;
+            const category = getCategoryForTitle(projectTitle);
+
+            if (category && currentActiveNav !== category) {
+                setActiveNav(category, { openSubmenu: true });
+            }
+
+            highlightProjectInSubmenu(projectId, projectTitle);
             return;
         }
-        
+
+        const aboutSection = document.getElementById('about');
+        if (!aboutSection) return;
+
         const aboutRect = aboutSection.getBoundingClientRect();
-        const computationRect = computationSection.getBoundingClientRect();
-        const architectureRect = architectureSection.getBoundingClientRect();
-        
-        let activeSectionId = null;
         const viewportMiddle = viewportHeight / 2;
-        
+
         if (aboutRect.top <= viewportMiddle && aboutRect.bottom > viewportMiddle) {
-            activeSectionId = 'about';
-        } else if (computationRect.top <= viewportMiddle && computationRect.bottom > viewportMiddle) {
-            activeSectionId = 'computation';
-        } else if (architectureRect.top <= viewportMiddle && architectureRect.bottom > viewportMiddle) {
-            activeSectionId = 'architecture';
-        } else {
-            // Fallback: if no section is clearly in the middle, use scroll position
-            if (scrollPosition < computationSection.offsetTop) {
-                activeSectionId = 'about';
-            } else if (scrollPosition < architectureSection.offsetTop) {
-                activeSectionId = 'computation';
-            } else {
-                activeSectionId = 'architecture';
+            if (currentActiveNav !== 'about') {
+                setActiveNav('about');
+                clearProjectHighlighting();
             }
-        }
-        
-        if (currentActiveSection !== activeSectionId) {
-            setActiveNav(activeSectionId);
-        }
-        
-        // Clear project highlighting when not in a project section
-        if (activeSectionId === 'about') {
-            clearProjectHighlighting();
         }
     }
     
@@ -1492,52 +1509,29 @@ function initializeScrollNavigation() {
     
     window.addEventListener('scroll', updateOnScroll, { passive: true });
     
-    // Set initial state
-    console.log('Setting initial state...');
     handleScroll();
-    
-    // Smooth scroll for navigation links
-    navLinks.forEach(link => {
+
+    topNavLinks.forEach(link => {
         link.addEventListener('click', function(e) {
+            if (e.target.closest('.nav-arrow')) return;
+
             e.preventDefault();
             const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            console.log(`Clicked nav link: ${targetId}`);
-            
-            if (targetSection) {
-                setActiveNav(targetId);
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            } else {
-                console.warn(`Target section not found: ${targetId}`);
+            const category = this.getAttribute('data-nav-category');
+            const target = document.getElementById(targetId);
+
+            if (category) {
+                setActiveNav(category, { openSubmenu: true });
+            } else if (targetId === 'about') {
+                setActiveNav('about');
+                if (window.closeNavSubmenus) window.closeNavSubmenus();
+            }
+
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
-    
-    // Test functions
-    window.testNavigation = function(sectionId) {
-        console.log(`🧪 Testing navigation for section: ${sectionId}`);
-        setActiveNav(sectionId);
-    };
-    
-    window.checkNavLinks = function() {
-        console.log('🔍 Checking all nav links:');
-        navLinks.forEach(link => {
-            const href = link.getAttribute('href');
-            const hasActive = link.classList.contains('active-link');
-            console.log(`${href}: active-link = ${hasActive}`);
-        });
-    };
-    
-    window.forceTest = function() {
-        console.log('🧪 Force testing all sections...');
-        setTimeout(() => testNavigation('about'), 100);
-        // setTimeout(() => testNavigation('home'), 500); // Commented out - uncomment when home section is added back
-        setTimeout(() => testNavigation('computation'), 500);
-        setTimeout(() => testNavigation('architecture'), 1000);
-    };
 }
 
 // Add hover pop-up behavior

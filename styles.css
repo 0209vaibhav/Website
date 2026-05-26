@@ -133,6 +133,10 @@ html, body {
     scroll-behavior: smooth;
 }
 
+body {
+    scroll-snap-type: y proximity;
+}
+
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
     width: 6px;
@@ -355,7 +359,8 @@ nav ul li a {
     backdrop-filter: blur(10px);
     transition: all 0.2s ease;
     pointer-events: auto;
-    min-width: 160px;
+    width: 190px;
+    max-width: 190px;
     justify-content: space-between;
 }
 
@@ -447,7 +452,7 @@ a {
 }
 
 hr {
-    margin: 30px 0;
+    margin: 12px 0;
     border: none;
     border-top: 1px dashed lightgrey;
     border-image: repeating-linear-gradient(to right, lightgrey, lightgrey 5px, transparent 5px, transparent 10px) 1;
@@ -745,19 +750,25 @@ hr {
     position: relative;
     max-width: 800px;
     margin: 0 auto;
-    padding-bottom: 0;
+    padding-bottom: 50px;
     z-index: 1;
+    scroll-snap-align: start;
+    scroll-margin-top: 40px;
 }
 
-.work-item:not(:last-child)::after {
+.work-item::after {
     content: '';
     position: absolute;
-    bottom: -30px;
+    bottom: 0;
     left: 0;
     width: 100%;
     height: 1px;
     border-bottom: 1px dashed lightgrey;
     border-image: repeating-linear-gradient(to right, lightgrey, lightgrey 5px, transparent 5px, transparent 10px) 1;
+}
+
+.work-item.no-separator::after {
+    content: none;
 }
 
 .work-item:hover {
@@ -1285,6 +1296,13 @@ hr {
     width: 100%;
     position: relative;
     z-index: 1;
+}
+
+/* Project card spacing is handled by `.work-item` separators.
+   When we reorder cards in JS, the original sibling <br> spacing can become
+   stray blank space at section boundaries, so we hide only section-level <br>. */
+.scroll-section > br {
+    display: none;
 }
 
 /* Collapsible submenus for navigation */
