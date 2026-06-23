@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "Data/Works/Computation/Ibex/Page 04.png",
         "Data/Works/Computation/Ibex/Page 05.png",
         "Data/Works/Computation/Ibex/Page 06.png",
-        "Data/Works/Computation/Ibex/Page 07.png"
+        "Data/Works/Computation/Ibex/Page 07.png",
+        "Data/Works/Computation/Ibex/Page 08.png"
     ];
 
     // Familial Housing project spread carousel
@@ -94,7 +95,8 @@ document.addEventListener("DOMContentLoaded", function() {
         "Data/Works/Architecture/Administration building/Page 08.png",
         "Data/Works/Architecture/Administration building/Page 09.png",
         "Data/Works/Architecture/Administration building/Page 10.png",
-        "Data/Works/Architecture/Administration building/Page 11.png"
+        "Data/Works/Architecture/Administration building/Page 11.png",
+        "Data/Works/Architecture/Administration building/Page 12.png"
     ];
 
     // Multi-Functional Entrance block project spread carousel
