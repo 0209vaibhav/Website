@@ -1210,7 +1210,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 // Helper functions for navigation
 const NAV_CATEGORIES = {
-    'creative-technology': [
+    'design-technology': [
         'MEMENTO',
         'ML in MEMENTO',
         'The Urban Fringe',
@@ -1257,7 +1257,7 @@ function getCategoryForTitle(title) {
 
 function reorderProjectsByNavigationOrder() {
     const sectionsByCategory = {
-        'creative-technology': 'computation',
+        'design-technology': 'computation',
         'computation-design': 'computation',
         'architecture': 'architecture'
     };
